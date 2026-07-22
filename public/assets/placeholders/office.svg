@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Office photograph preview</title><desc id="desc">Replace before production</desc>
+  <rect width="1600" height="1000" fill="#dce0e5"/><rect x="280" y="180" width="1040" height="700" fill="#f2f1ec"/><rect x="680" y="430" width="240" height="450" fill="#17264d"/><g fill="#aab3c0"><rect x="370" y="290" width="210" height="170"/><rect x="1020" y="290" width="210" height="170"/><rect x="370" y="560" width="210" height="170"/><rect x="1020" y="560" width="210" height="170"/></g><path d="M800 470v360M725 650h150" stroke="#58a87d" stroke-width="8"/>
+  <text x="60" y="80" fill="#101b3c" font-family="Arial,sans-serif" font-size="34" font-weight="700">PREVIEW OFFICE IMAGE</text><text x="60" y="125" fill="#59657a" font-family="Arial,sans-serif" font-size="24">REPLACE BEFORE PRODUCTION</text>
+</svg>

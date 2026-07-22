@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Product image preview</title><desc id="desc">Abstract elevator cabin diagram. Replace before production.</desc>
+  <rect width="1600" height="1000" fill="#e5e7eb"/><g stroke="#a4adba" stroke-width="2"><path d="M0 200h1600M0 400h1600M0 600h1600M0 800h1600M320 0v1000M640 0v1000M960 0v1000M1280 0v1000"/></g><rect x="520" y="95" width="560" height="810" fill="#17264d"/><rect x="595" y="175" width="410" height="650" fill="#f2f1ec"/><path d="M800 175v650" stroke="#58a87d" stroke-width="6"/><path d="m760 485 40-45 40 45M760 535l40 45 40-45" fill="none" stroke="#17264d" stroke-width="8"/>
+  <text x="70" y="90" fill="#101b3c" font-family="Arial,sans-serif" font-size="34" font-weight="700">PREVIEW PRODUCT IMAGE</text><text x="70" y="135" fill="#59657a" font-family="Arial,sans-serif" font-size="24">REPLACE BEFORE PRODUCTION</text>
+</svg>

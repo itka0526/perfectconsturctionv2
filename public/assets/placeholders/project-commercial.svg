@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Commercial project preview</title><desc id="desc">Not a real project photograph. Replace before production.</desc>
+  <rect width="1600" height="1000" fill="#dadfe5"/><path d="M180 880V255h460v625zm460 0V100h780v780z" fill="#edf0f2"/><g stroke="#9fa9b7" stroke-width="10"><path d="M230 350h360M230 480h360M230 610h360M230 740h360M730 220h600M730 380h600M730 540h600M730 700h600"/></g><rect x="870" y="220" width="300" height="660" fill="#17264d"/><path d="M1020 280v540" stroke="#58a87d" stroke-width="8"/>
+  <text x="65" y="80" fill="#101b3c" font-family="Arial,sans-serif" font-size="34" font-weight="700">PREVIEW COMMERCIAL CASE STUDY</text><text x="65" y="125" fill="#59657a" font-family="Arial,sans-serif" font-size="24">NOT A REAL PROJECT — REPLACE BEFORE PRODUCTION</text>
+</svg>

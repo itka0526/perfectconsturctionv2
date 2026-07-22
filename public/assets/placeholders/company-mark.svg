@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="96" viewBox="0 0 320 96" role="img" aria-labelledby="title desc">
+  <title id="title">Preview company mark</title>
+  <desc id="desc">Replace before production</desc>
+  <rect width="320" height="96" fill="#101b3c"/>
+  <path d="M24 18h44v60H24zM35 29h22v38H35z" fill="#f5f4ef" fill-rule="evenodd"/>
+  <path d="M18 48h56" stroke="#58a87d" stroke-width="2"/>
+  <text x="88" y="43" fill="#fff" font-family="Arial,sans-serif" font-size="15" font-weight="700" letter-spacing="1">PERFECT CONSTRUCTION</text>
+  <text x="88" y="65" fill="#9ba5ba" font-family="Arial,sans-serif" font-size="8" letter-spacing=".8">REPLACE BEFORE PRODUCTION</text>
+</svg>

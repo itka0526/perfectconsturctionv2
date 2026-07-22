@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Team photograph preview</title><desc id="desc">Replace before production</desc>
+  <rect width="1600" height="1000" fill="#e4e6e9"/><path d="M0 700h1600v300H0z" fill="#c2c8d0"/>
+  <g fill="#17264d"><circle cx="540" cy="390" r="95"/><path d="M365 720c20-170 100-250 175-250s155 80 175 250z"/><circle cx="800" cy="340" r="110"/><path d="M590 720c30-210 125-295 210-295s180 85 210 295z"/><circle cx="1080" cy="390" r="95"/><path d="M905 720c20-170 100-250 175-250s155 80 175 250z"/></g>
+  <text x="70" y="90" fill="#101b3c" font-family="Arial,sans-serif" font-size="34" font-weight="700">PREVIEW TEAM IMAGE</text><text x="70" y="135" fill="#59657a" font-family="Arial,sans-serif" font-size="24">REPLACE BEFORE PRODUCTION</text>
+</svg>
