@@ -31,7 +31,7 @@ export function ProjectCard({ project, featured = false }: ProjectCardProps) {
           <span>{project.buildingType.mn}</span>
           <span>{project.location.mn}</span>
           {project.verificationStatus === "placeholder" && (
-            <PlaceholderBadge label="Кейсийн түр агуулга" />
+            <PlaceholderBadge label="Түр агуулга" />
           )}
         </div>
         <h3>{project.title.mn}</h3>

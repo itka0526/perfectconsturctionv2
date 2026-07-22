@@ -4,21 +4,21 @@ import type { Brand } from "./types";
 export const brands: Brand[] = [
   {
     slug: "seohyun",
-    draft: false,
+    draft: true,
     verificationStatus: "placeholder",
     title: { mn: "SEOHYUN" },
     summary: {
-      mn: "Өндөр шаардлагатай төсөлд чиглэсэн БНСУ-ын премиум шийдэл.",
+      mn: "Өндөр зэрэглэлийн барилгын төсөлд санал болгох БНСУ-ын үйлдвэрлэгч.",
     },
     origin: { mn: "БНСУ" },
     positioning: {
-      mn: "Премиум төсөв, хийц ба сонголт шаардсан барилгад төслөөр санал болгоно.",
+      mn: "Өндөр зэрэглэлийн хийц, материал, тоноглол шаардсан төсөлд тохирох хувилбарыг сонгоно.",
     },
     logisticsNote: {
-      mn: "Монгол руу шууд тээврийн нөхцөл хязгаарлагдмал тул өртөг, хүргэлтийн хугацааг төсөл бүрээр тусад нь тооцно.",
+      mn: "Монгол руу шууд тээвэрлэх боломж хязгаарлагдмал тул тээврийн зардал, тээвэрлэлтийн хугацааг төсөл бүрд тусад нь тооцно.",
     },
     authorizationStatement: {
-      mn: "Дистрибьюторын статус болон нийтлэх баримтыг баталгаажуулсны дараа байршуулна.",
+      mn: "Албан ёсны эрх, нийтлэх зөвшөөрөлтэй баримтыг баталгаажуулсны дараа мэдээлнэ.",
     },
     productSlugs: [
       "passenger-elevator",
@@ -31,7 +31,7 @@ export const brands: Brand[] = [
     assets: [assets.manufacturers.seohyun],
     seo: {
       title: { mn: "SEOHYUN лифт" },
-      description: { mn: "SEOHYUN премиум лифтний төслийн шийдэл." },
+      description: { mn: "БНСУ-ын SEOHYUN лифтний бүтээгдэхүүн, тээврийн нөхцөлийн мэдээлэл." },
       canonicalPath: "/brands/seohyun",
       image: assets.manufacturers.seohyun,
     },
@@ -42,17 +42,17 @@ export const brands: Brand[] = [
     verificationStatus: "placeholder",
     title: { mn: "FUJI Precision" },
     summary: {
-      mn: "Монголын эдийн засаг, барилгын төслийн шаардлагад тохируулах БНХАУ-ын шийдэл.",
+      mn: "Монголын барилгын төсөлд зориулан үзүүлэлт, хийцийг захиалгаар үйлдвэрлэх БНХАУ-ын үйлдвэрлэгч.",
     },
     origin: { mn: "БНХАУ" },
     positioning: {
-      mn: "Орон сууц, үйлчилгээ, үйлдвэр зэрэг өргөн хэрэглээнд төсөв ба үзүүлэлтийг тэнцвэржүүлнэ.",
+      mn: "Орон сууц, үйлчилгээний төв, үйлдвэр зэрэг барилгад шаардлагатай үзүүлэлт, төсөвт нийцэх хувилбарыг сонгоно.",
     },
     logisticsNote: {
-      mn: "Стандарт тохиргоонд БНХАУ-аас Монгол руу хүргэх суурь хугацааг үйлдвэрийн гаралтаас тооцно.",
+      mn: "БНХАУ-аас Монгол руу тээвэрлэх хугацааг бүтээгдэхүүн үйлдвэрээс гарсан өдрөөс тооцно.",
     },
     authorizationStatement: {
-      mn: "Үйлдвэрлэгчийн харилцаа болон нийтлэх баримтыг баталгаажуулсны дараа байршуулна.",
+      mn: "Үйлдвэрлэгчийн албан ёсны эрх, нийтлэх зөвшөөрөлтэй баримтыг баталгаажуулсны дараа мэдээлнэ.",
     },
     productSlugs: [
       "passenger-elevator",
@@ -68,7 +68,7 @@ export const brands: Brand[] = [
     assets: [assets.manufacturers.fujiPrecision],
     seo: {
       title: { mn: "FUJI Precision лифт" },
-      description: { mn: "FUJI Precision төслөөр тохируулах лифтний шийдэл." },
+      description: { mn: "FUJI Precision лифт, урсдаг шатны захиалгаар үйлдвэрлэх бүтээгдэхүүний мэдээлэл." },
       canonicalPath: "/brands/fuji-precision",
       image: assets.manufacturers.fujiPrecision,
     },
@@ -76,20 +76,20 @@ export const brands: Brand[] = [
   {
     slug: "asia-fuji",
     draft: false,
-    verificationStatus: "placeholder",
+    verificationStatus: "verified",
     title: { mn: "ASIA FUJI" },
     summary: {
-      mn: "Монголын барилгын хэрэгцээнд төслөөр тохируулан үйлдвэрлэх БНХАУ-ын шийдэл.",
+      mn: "Монголын барилгын төсөлд зориулан хэмжээ, үзүүлэлт, хийцийг захиалгаар үйлдвэрлэх БНХАУ-ын үйлдвэрлэгч.",
     },
     origin: { mn: "БНХАУ" },
     positioning: {
-      mn: "Шинэ төслийн хэмжээ, даац, хурд, кабин ба удирдлагын шаардлагаар тохируулна.",
+      mn: "Шахтын хэмжээ, даац, хурд, кабин, хаалга, удирдлагын шаардлагад нийцэх хувилбарыг сонгоно.",
     },
     logisticsNote: {
-      mn: "Үйлдвэрлэлийн батлагдсан үзүүлэлт, үйлдвэрийн гаралтын дараа хүргэлтийн хугацааг тооцно.",
+      mn: "Техникийн үзүүлэлт батлагдаж, бүтээгдэхүүн үйлдвэрээс гарсны дараа тээврийн хугацааг тооцно.",
     },
     authorizationStatement: {
-      mn: "Suzhou Asia Fuji Elevator Co., Ltd.-ийн эрхийн баримтаар Perfect Construction International LLC нь Монгол Улсад маркетинг, түгээлт, борлуулалт, үйлчилгээний эрхтэй онцгой төлөөлөгчөөр 2026.03.27-2029.03.27 хүртэл томилогдсон.",
+      mn: "Suzhou Asia Fuji Elevator Co., Ltd.-ээс Perfect Construction International LLC-ийг Монгол Улс дахь лифт, урсдаг шат, урсдаг замын онцгой төлөөлөгчөөр 2026.03.27–2029.03.27 хүртэл томилсон баримт.",
     },
     productSlugs: [
       "passenger-elevator",
@@ -105,7 +105,7 @@ export const brands: Brand[] = [
     assets: [assets.manufacturers.asiaFuji],
     seo: {
       title: { mn: "ASIA FUJI лифт" },
-      description: { mn: "ASIA FUJI төслөөр тохируулах лифтний шийдэл." },
+      description: { mn: "ASIA FUJI лифт, урсдаг шатны захиалгаар үйлдвэрлэх бүтээгдэхүүний мэдээлэл." },
       canonicalPath: "/brands/asia-fuji",
       image: assets.manufacturers.asiaFuji,
     },

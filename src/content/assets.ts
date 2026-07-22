@@ -29,21 +29,23 @@ const verified = (
 export const assets = {
   company: {
     logo: placeholder(
-      "/assets/placeholders/company-mark.svg",
-      "Perfect Construction компанийн логоны түр тэмдэглэгээ",
-      320,
-      96,
+      "/assets/company/logo/perfect-construction-mark.svg",
+      "Төгс Бүтээн Босголт компанийн тэмдэг",
+      500,
+      500,
     ),
-    team: placeholder(
-      "/assets/placeholders/team.svg",
-      "Perfect Construction инженерийн багийн зургийн түр байрлал",
-    ),
-    office: placeholder(
-      "/assets/placeholders/office.svg",
-      "Perfect Construction оффисын зургийн түр байрлал",
+    office: verified(
+      "/assets/company/office/perfect-construction-office-exterior.webp",
+      "Төгс Бүтээн Босголт компанийн оффис байрладаг барилгын гадна төрх",
+      507,
+      240,
     ),
   },
   homepage: {
+    elevatorDescentVideo: {
+      src: "/assets/homepage/elevator-descent.webm",
+      verificationStatus: "verified",
+    },
     hero: placeholder(
       "/assets/placeholders/hero.svg",
       "Монголд хэрэгжүүлсэн лифтний төслийн үндсэн зургийн түр байрлал",
@@ -59,34 +61,36 @@ export const assets = {
       320,
     ),
     fujiPrecision: verified(
-      "/assets/catalogs/fuji-precision-decoration/fuji-precision-business-series.webp",
-      "FUJI Precision бизнес ангиллын кабин, өнгөлгөөний каталогийн хуудас",
-      1600,
-      1138,
+      "/assets/manufacturers/fuji-precision/fuji-precision-logo.svg",
+      "FUJI Precision үйлдвэрлэгчийн лого",
+      510,
+      80,
     ),
     asiaFuji: verified(
-      "/assets/catalogs/asia-fuji-passenger/asia-fuji-passenger-landing-door-options.webp",
-      "ASIA FUJI зорчигчийн лифтний давхрын хаалганы сонголтын каталогийн хуудас",
-      1600,
-      1139,
+      "/assets/manufacturers/asia-fuji/asia-fuji-logo.svg",
+      "ASIA FUJI үйлдвэрлэгчийн лого",
+      200,
+      200,
     ),
   },
   products: {
     passenger: verified(
-      "/assets/catalogs/asia-fuji-passenger/asia-fuji-passenger-landing-door-options.webp",
-      "ASIA FUJI зорчигчийн лифтний давхрын хаалганы сонголтын каталогийн хуудас",
-      1600,
-      1139,
+      "/assets/products/passenger/passenger-asia-fuji-2.png",
+      "ASIA FUJI зорчигчийн лифтний бүхээгийн гурван өнгөлгөөний сонголт",
+      2412,
+      1721,
     ),
     home: verified(
       "/assets/catalogs/fuji-precision-decoration/fuji-precision-home-elevator-decoration.webp",
-      "FUJI Precision гэрийн лифтний кабин, өнгөлгөөний каталогийн хуудас",
+      "FUJI Precision амины орон сууцны лифтний кабин, өнгөлгөөний каталогийн хуудас",
       1600,
       1138,
     ),
-    cargo: placeholder(
-      "/assets/placeholders/product.svg",
-      "Ачааны лифтний баталгаажуулах зургийн түр байрлал",
+    cargo: verified(
+      "/assets/products/cargo/cargo-asia-fuji.jpg",
+      "Ачааны лифтээр модон хайрцаг тээвэрлэж буй ажилчид",
+      382,
+      405,
     ),
     hospital: verified(
       "/assets/catalogs/asia-fuji-passenger/asia-fuji-hospital-elevator.webp",
@@ -95,16 +99,16 @@ export const assets = {
       1138,
     ),
     panoramic: verified(
-      "/assets/catalogs/asia-fuji-passenger/asia-fuji-panoramic-elevator.webp",
-      "ASIA FUJI панорам лифтний каталогийн танилцуулга",
-      1600,
-      1138,
+      "/assets/products/panoramic/panararomic-asia-fuji.png",
+      "ASIA FUJI панорам лифтний шилэн кабин, дотоод засал",
+      1193,
+      851,
     ),
     escalator: verified(
-      "/assets/catalogs/asia-fuji-escalator/asia-fuji-escalator-technology.webp",
-      "ASIA FUJI урсдаг шатны каталогийн танилцуулга",
-      1600,
-      1138,
+      "/assets/products/escalator/escalator-asia-fuji.png",
+      "ASIA FUJI урсдаг шатны шилэн хашлага болон зорчих хэсэг",
+      1723,
+      1228,
     ),
     movingWalk: verified(
       "/assets/catalogs/asia-fuji-escalator/asia-fuji-moving-walk.webp",
@@ -175,7 +179,6 @@ export const assets = {
 
 export const allAssetRefs: AssetRef[] = [
   assets.company.logo,
-  assets.company.team,
   assets.company.office,
   assets.homepage.hero,
   ...Object.values(assets.manufacturers),

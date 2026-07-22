@@ -25,7 +25,7 @@ export function SectionHeading({
     >
       <div className="section-heading__copy">
         {eyebrow && <p className="eyebrow">{eyebrow}</p>}
-        <h2>{title}</h2>
+        <h2 dangerouslySetInnerHTML={{__html: title}}></h2>
         {description && <p>{description}</p>}
       </div>
       {action && <div className="section-heading__action">{action}</div>}

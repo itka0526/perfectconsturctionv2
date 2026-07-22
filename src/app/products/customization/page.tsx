@@ -20,9 +20,9 @@ import { EditorialList, JsonLd } from "../../_route-helpers";
 const customization = productBySlug.get("customization");
 
 export const metadata = createPageMetadata({
-  title: "Лифтний кабин, хаалга, удирдлагын сонголт | Perfect Construction",
+  title: "Лифтний кабин, хаалга, удирдлагын сонголт",
   description:
-    "Барилгын интерьер, ашиглалтын нөхцөлд нийцүүлэх лифтний кабин, хаалга, товчлуур, дэлгэц, өнгөлгөөний сонголт.",
+    "Барилгын дотоод засал, ашиглалтын нөхцөлд нийцүүлэх лифтний кабин, хаалга, товчлуур, дэлгэц, өнгөлгөөний сонголт.",
   path: "/products/customization",
 });
 
@@ -38,10 +38,10 @@ export default function CustomizationPage() {
           breadcrumbsJsonLd([
             { name: "Нүүр", path: "/" },
             { name: "Бүтээгдэхүүн", path: "/products" },
-            { name: "Тохируулга", path: "/products/customization" },
+            { name: "Кабин, хаалга, удирдлага", path: "/products/customization" },
           ]),
           serviceJsonLd({
-            name: "Лифтний кабин ба удирдлагын тохируулга",
+            name: "Лифтний кабин, хаалга, удирдлагын сонголт",
             description: customization.summary.mn,
             path: "/products/customization",
           }),
@@ -53,12 +53,12 @@ export default function CustomizationPage() {
             items={[
               { label: "Нүүр", href: "/" },
               { label: "Бүтээгдэхүүн", href: "/products" },
-              { label: "Тохируулга" },
+              { label: "Кабин, хаалга, удирдлага" },
             ]}
           />
           <div className="page-hero__grid">
             <div>
-              <p className="eyebrow">Архитектуртай уялдуулах</p>
+              <p className="eyebrow">Дотоод засалтай уялдуулна</p>
               <h1 className="display">{customization.title.mn}</h1>
               <p className="lede">{customization.summary.mn}</p>
               <PlaceholderBadge />
@@ -76,10 +76,10 @@ export default function CustomizationPage() {
       <section className="section">
         <div className="shell editorial-grid">
           <div>
-            <SectionHeading
-              eyebrow="Сонголтын хүрээ"
-              title="Нэг каталогт баригдахгүй"
-              description="Үйлдвэрлэгч бүрийн боломжит материал, хийц, тоноглол өөр тул төслийн батлагдсан интерьер, ашиглалтаар нарийвчилна."
+          <SectionHeading
+            eyebrow="Сонголтын хүрээ"
+            title="Сонголт үйлдвэрлэгч бүрд өөр"
+            description="Кабины материал, хаалга, товчлуур, дэлгэц, гэрэлтүүлгийн сонголт үйлдвэрлэгч бүрд өөр. Эдгээрийг батлагдсан дотоод засал, ашиглалтын нөхцөлд нийцүүлнэ."
             />
           </div>
           <EditorialList
@@ -92,8 +92,8 @@ export default function CustomizationPage() {
         <div className="shell detail-grid">
           <div>
             <SectionHeading
-              eyebrow="Дизайны шийдвэр"
-              title="Бэлтгэх материал"
+              eyebrow="Сонголт хийхэд"
+              title="Бэлтгэх зураг, мэдээлэл"
             />
             <EditorialList
               items={customization.technicalConsiderations.map(
@@ -102,15 +102,16 @@ export default function CustomizationPage() {
             />
           </div>
           <div className="prose">
-            <h2>Сонголтыг хэзээ батлах вэ?</h2>
+            <h2>Кабин, хаалганы сонголтыг хэзээ батлах вэ?</h2>
             <p>
-              Кабин, хаалга, удирдлагын сонголт нь техникийн үзүүлэлт,
-              үйлдвэрлэлийн захиалга батлагдахаас өмнө төслийн интерьерийн багтай
-              нийцсэн байна.
+              Кабин, хаалга, удирдлагын сонголтыг техникийн үзүүлэлт болон
+              үйлдвэрийн захиалга батлагдахаас өмнө барилгын дотоод засалтай
+              уялдуулж батална.
             </p>
             <p>
-              Өнгө, материалын дэлгэц дээрх дүрслэл бодит дээжээс зөрж болох тул
-              эцсийн сонголтыг баталгаажсан каталог эсвэл дээжээр хийнэ.
+              Дэлгэц дээрх өнгө, материалын дүрслэл бодит дээжээс зөрж болдог.
+              Иймээс эцсийн сонголтыг үйлдвэрлэгчийн каталог эсвэл бодит дээжээр
+              баталгаажуулна.
             </p>
           </div>
         </div>
@@ -119,8 +120,8 @@ export default function CustomizationPage() {
       <section className="section">
         <div className="shell">
           <ContactPanel
-            title="Интерьерийн шийдлээ техникийн сонголттой уялдуулъя"
-            description="Архитектурын зураг, өнгөний чиглэл, ашиглалтын шаардлага байвал уулзалтаар танилцуулаарай."
+            title="Кабин, хаалганы сонголтоо ярилцъя"
+            description="Архитектур, дотоод засал чимэглэлийн зураг, өнгө, материал, ашиглалтын шаардлагаа уулзалтаар танилцуулна уу."
           />
         </div>
       </section>

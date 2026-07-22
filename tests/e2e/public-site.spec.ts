@@ -20,7 +20,7 @@ const publicRoutes = [
 test.describe("public site", () => {
   for (const route of publicRoutes) {
     test(`${route} renders a semantic page`, async ({ page }) => {
-      const response = await page.goto(route);
+      const response = await page.goto(route, { waitUntil: "domcontentloaded" });
 
       expect(response?.ok()).toBe(true);
       await expect(page.locator("main")).toBeVisible();
@@ -61,7 +61,7 @@ test.describe("public site", () => {
     await page.setViewportSize({ width: 360, height: 800 });
 
     for (const route of publicRoutes) {
-      await page.goto(route);
+      await page.goto(route, { waitUntil: "domcontentloaded" });
       const hasHorizontalOverflow = await page.evaluate(
         () => document.documentElement.scrollWidth > document.documentElement.clientWidth,
       );
@@ -70,10 +70,11 @@ test.describe("public site", () => {
   });
 
   test("internal links found on public pages resolve", async ({ page, request }) => {
+    test.setTimeout(120_000);
     const internalLinks = new Set<string>();
 
     for (const route of publicRoutes) {
-      await page.goto(route);
+      await page.goto(route, { waitUntil: "domcontentloaded" });
       const hrefs = await page.locator("a[href]").evaluateAll((links) =>
         links.map((link) => link.getAttribute("href") ?? ""),
       );

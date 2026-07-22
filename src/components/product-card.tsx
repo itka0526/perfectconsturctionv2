@@ -8,8 +8,20 @@ interface ProductCardProps {
   priority?: boolean;
 }
 
+const cardImageSettings: Partial<
+  Record<
+    string,
+    { scale?: number; position?: string; fit?: "cover" | "contain" }
+  >
+> = {
+  "passenger-elevator": { fit: "contain" },
+  "panoramic-elevator": { scale: 1.45 },
+  "cargo-elevator": { position: "center 40%" },
+};
+
 export function ProductCard({ product, priority = false }: ProductCardProps) {
   const asset = product.assets[0];
+  const imageSettings = cardImageSettings[product.slug];
 
   return (
     <article className="card product-card">
@@ -20,12 +32,15 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
             sizes="(max-width: 680px) 100vw, (max-width: 1100px) 50vw, 33vw"
             priority={priority}
             aspect="4 / 3"
+            scale={imageSettings?.scale}
+            position={imageSettings?.position}
+            fit={imageSettings?.fit}
           />
         </div>
       )}
       <div className="card__body">
         <div className="card__meta">
-          <span>Лифтний шийдэл</span>
+          <span>Бүтээгдэхүүн</span>
           {product.verificationStatus === "placeholder" && (
             <PlaceholderBadge />
           )}

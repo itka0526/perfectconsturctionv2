@@ -1,14 +1,14 @@
-import { Mail, Phone } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
+import { Fragment } from "react";
 import { siteSettings } from "@/content";
 import { ButtonLink } from "./button-link";
 import { Logo } from "./logo";
 import { MobileNavigation } from "./mobile-navigation";
-import { PlaceholderBadge } from "./placeholder-badge";
 import { primaryNavigation } from "./navigation";
 import { TrackedLink } from "./tracked-link";
 
 export function SiteHeader() {
-  const phone = siteSettings.contacts.find(
+  const phones = siteSettings.contacts.filter(
     (contact) => contact.kind === "phone",
   );
   const email = siteSettings.contacts.find(
@@ -19,21 +19,35 @@ export function SiteHeader() {
     <header className="site-header">
       <div className="utility-bar">
         <div className="shell utility-bar__inner">
-          <p>Улаанбаатар · Төсөлд тохируулсан лифтний шийдэл</p>
+          <p title={siteSettings.address.mn}>
+            <MapPin aria-hidden="true" size={14} strokeWidth={1.8} />
+            <span className="sr-only">Оффис:</span>
+            <span>{siteSettings.shortAddress.mn}</span>
+          </p>
           <ul>
-            {phone && (
-              <li>
-                <TrackedLink
-                  href={phone.href}
-                  eventName="contact_click"
-                  eventContext="utility_phone"
-                >
-                  <Phone aria-hidden="true" size={15} strokeWidth={1.8} />
-                  <span>{phone.value}</span>
-                  {phone.verificationStatus === "placeholder" && (
-                    <PlaceholderBadge label="Түр" />
-                  )}
-                </TrackedLink>
+            {phones.length > 0 && (
+              <li className="utility-bar__phones">
+                <Phone aria-hidden="true" size={14} strokeWidth={1.8} />
+                <span className="sr-only">Утас:</span>
+                {phones.map((phone, index) => (
+                  <Fragment key={phone.id}>
+                    {index > 0 ? (
+                      <span
+                        className="utility-bar__phone-separator"
+                        aria-hidden="true"
+                      >
+                        ·
+                      </span>
+                    ) : null}
+                    <TrackedLink
+                      href={phone.href}
+                      eventName="contact_click"
+                      eventContext={`utility_${phone.id}`}
+                    >
+                      {phone.value}
+                    </TrackedLink>
+                  </Fragment>
+                ))}
               </li>
             )}
             {email && (
@@ -43,11 +57,8 @@ export function SiteHeader() {
                   eventName="contact_click"
                   eventContext="utility_email"
                 >
-                  <Mail aria-hidden="true" size={15} strokeWidth={1.8} />
+                  <Mail aria-hidden="true" size={14} strokeWidth={1.8} />
                   <span>{email.value}</span>
-                  {email.verificationStatus === "placeholder" && (
-                    <PlaceholderBadge label="Түр" />
-                  )}
                 </TrackedLink>
               </li>
             )}

@@ -11,11 +11,11 @@ describe("content validation", () => {
     expect(validateContent()).toEqual([]);
   });
 
-  test("catalogue previews do not expose unapproved source PDFs", () => {
+  test("approved catalogue downloads use public asset paths", () => {
     catalogues.forEach((catalogue) => {
       expect(catalogue.publicationAuthorized).toBe(true);
-      expect(catalogue.downloadAuthorized).toBe(false);
-      expect(catalogue.downloadPath).toBeUndefined();
+      expect(catalogue.downloadAuthorized).toBe(true);
+      expect(catalogue.downloadPath).toMatch(/^\/assets\/catalogs\/.+\.pdf$/);
     });
   });
 
@@ -28,8 +28,20 @@ describe("content validation", () => {
         "placeholder-record",
         "placeholder-asset",
         "placeholder-contact",
-        "placeholder-proof",
-        "certificate-not-authorized",
+      ]),
+    );
+    expect(issues.map(({ code }) => code)).not.toContain("placeholder-proof");
+    expect(issues.map(({ code }) => code)).not.toContain("placeholder-timeline");
+    expect(issues.map(({ path }) => path)).toEqual(
+      expect.arrayContaining([
+        "site.logo",
+        "site.address",
+        "site.contacts.phone-primary",
+        "site.contacts.phone-secondary",
+        "site.contacts.phone-mobile",
+        "site.contacts.email-primary",
+        "site.contacts.facebook-primary",
+        "site.contacts.map-primary",
       ]),
     );
     expect(() => assertContentReadyForProduction()).toThrow(

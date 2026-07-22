@@ -12,16 +12,18 @@ import { breadcrumbsJsonLd } from "@/lib/structured-data";
 import { JsonLd } from "../../_route-helpers";
 
 export const metadata = createPageMetadata({
-  title: "Үйлдвэрлэгчийн эрхийн баримт, гэрчилгээ | Perfect Construction",
+  title: "Үйлдвэрлэгчийн эрхийн баримт, гэрчилгээ",
   description:
-    "Perfect Construction-ийн нийтлэх зөвшөөрөлтэй үйлдвэрлэгчийн эрхийн баримт, гэрчилгээний сан.",
+    "Төгс Бүтээн Босголтын нийтлэх зөвшөөрөлтэй үйлдвэрлэгчийн эрхийн баримт, гэрчилгээний сан.",
   path: "/about/certificates",
 });
 
-const orderedCertificates = [...certificates].sort(
-  (left, right) =>
-    Number(right.publicationAuthorized) - Number(left.publicationAuthorized),
-);
+const orderedCertificates = certificates
+  .filter((certificate) => !certificate.draft)
+  .sort(
+    (left, right) =>
+      Number(right.publicationAuthorized) - Number(left.publicationAuthorized),
+  );
 
 export default function CertificatesPage() {
   return (
@@ -44,12 +46,12 @@ export default function CertificatesPage() {
           />
           <div className="page-hero__grid">
             <div>
-              <p className="eyebrow">Нотолгооны сан</p>
-              <h1 className="display">Нийтлэх эрхтэй баримтыг нэг дор</h1>
+              <p className="eyebrow">Албан ёсны баримт</p>
+              <h1 className="display">Үйлдвэрлэгчийн эрхийн баримт, гэрчилгээ</h1>
             </div>
             <p className="lede">
               Баримтын гаргагч, төрөл, хүчинтэй хугацаа, нийтлэх зөвшөөрлийг
-              шалгасны дараа веб хувилбар болон эх файлыг байршуулна.
+              шалгасны дараа үзэх зураг болон эх PDF файлыг байршуулна.
             </p>
           </div>
         </div>
@@ -59,7 +61,7 @@ export default function CertificatesPage() {
         <div className="shell">
           <SectionHeading
             eyebrow="Үйлдвэрлэгчээр"
-            title="Эрхийн баримтын төлөв"
+            title="Нийтлэх боломжтой баримтууд"
             description="Зөвшөөрөлгүй баримтын зураг, PDF-ийг урьдчилан нийтлэхгүй."
           />
           <div className="certificate-grid">
@@ -102,9 +104,9 @@ export default function CertificatesPage() {
           <h2>Баримт нийтлэх шалгуур</h2>
           <ul className="resource-list">
             <li>Одоогийн хүчинтэй статус, хугацааг баталгаажуулсан байх.</li>
-            <li>Үйлдвэрлэгчээс вебээр нийтлэх зөвшөөрөл авсан байх.</li>
+            <li>Үйлдвэрлэгчээс вэбсайтад нийтлэх зөвшөөрөл авсан байх.</li>
             <li>Компанийн эрх, харилцааг хэтрүүлэлгүй зөв томьёолсон байх.</li>
-            <li>Унших боломжтой веб хувилбар, эх файлыг тусад нь бэлтгэсэн байх.</li>
+            <li>Уншихад тод зураг болон эх файлыг тусад нь бэлтгэсэн байх.</li>
           </ul>
         </div>
       </section>
@@ -112,8 +114,8 @@ export default function CertificatesPage() {
       <section className="section">
         <div className="shell">
           <ContactPanel
-            title="Төсөлд хамаарах нотолгоог асуугаарай"
-            description="Тухайн үйлдвэрлэгч, бүтээгдэхүүний баримтыг уулзалт эсвэл шууд харилцаагаар тодруулж болно."
+            title="Төсөлд тохирох үйлдвэрлэгчийн талаар асуугаарай"
+            description="Тухайн үйлдвэрлэгчийн эрхийн баримт болон бүтээгдэхүүний мэдээллийг уулзалтаар дэлгэрэнгүй танилцуулна."
           />
         </div>
       </section>

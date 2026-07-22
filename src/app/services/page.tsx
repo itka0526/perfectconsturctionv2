@@ -2,16 +2,10 @@ import {
   Breadcrumbs,
   ButtonLink,
   ContactPanel,
-  PlaceholderBadge,
   ProcessSteps,
   SectionHeading,
-  TimelineStrip,
 } from "@/components";
-import {
-  afterSalesStatement,
-  serviceSteps,
-  standardTimeline,
-} from "@/content";
+import { serviceSteps, standardTimelineSummary } from "@/content";
 import { createPageMetadata } from "@/lib/metadata";
 import {
   breadcrumbsJsonLd,
@@ -21,9 +15,9 @@ import {
 import { EditorialList, JsonLd } from "../_route-helpers";
 
 export const metadata = createPageMetadata({
-  title: "Лифтний шинэ төслийн үйлчилгээ | Perfect Construction",
+  title: "Лифтний шинэ төслийн үйлчилгээ",
   description:
-    "Талбайн хэмжилт, техникийн сонголт, үйлдвэрлэл, хүргэлт, угсралт, ашиглалтад оруулах шинэ төслийн урсгал.",
+    "Талбайн хэмжилт, техникийн сонголт, үйлдвэрийн захиалга, тээвэр, угсралт, суурилуулалтын ажлын дараалал.",
   path: "/services",
 });
 
@@ -37,9 +31,9 @@ export default function ServicesPage() {
             { name: "Үйлчилгээ", path: "/services" },
           ]),
           serviceJsonLd({
-            name: "Шинэ төслийн лифтний инженерчлэл ба нийлүүлэлт",
+            name: "Шинэ барилгын лифтний нийлүүлэлт, угсралт",
             description:
-              "Талбайн хэмжилтээс угсралт, ашиглалтад оруулах хүртэлх төслийн урсгал.",
+              "Талбайн хэмжилтээс үйлдвэрийн захиалга, тээвэр, угсралт хүртэлх ажлын дараалал.",
             path: "/services",
           }),
         ]}
@@ -51,14 +45,14 @@ export default function ServicesPage() {
           />
           <div className="page-hero__grid">
             <div>
-              <p className="eyebrow">Шинэ төсөлд төвлөрнө</p>
-              <h1 className="display">Зөв хэмжилтээс найдвартай ашиглалтад</h1>
+              <p className="eyebrow">Шинэ барилгын төсөл</p>
+              <h1 className="display">Хэмжилтээс угсралт, суурилуулалт хүртэл</h1>
             </div>
             <div>
               <p className="lede">
-                Perfect Construction шинэ барилгын лифтний сонголт, үйлдвэрлэл,
-                тээвэр, угсралтын уялдааг хариуцна. Бусдын суурилуулсан лифтний
-                ерөнхий засвар үйлчилгээг энэ сайтаар санал болгохгүй.
+                Төгс Бүтээн Босголт шинэ барилгын лифтний хэмжилт, техникийн
+                сонголт, үйлдвэрийн захиалга, тээвэр, угсралт, суурилуулалтыг
+                дарааллаар зохион байгуулна.
               </p>
               <ButtonLink href="/contact">Төслийн талаар ярилцах</ButtonLink>
             </div>
@@ -70,8 +64,8 @@ export default function ServicesPage() {
         <div className="shell">
           <SectionHeading
             eyebrow="Зургаан үе шат"
-            title="Нэг шийдвэр дараагийн ажлын эхлэлийг тодорхойлно"
-            description="Захиалагч, барилгын баг, үйлдвэрлэгчийн баталгаажуулалтыг дараалалтай зохион байгуулна."
+            title="Ажил бүр батлагдсан дарааллаар үргэлжилнэ"
+            description="Захиалагч, барилгын баг, үйлдвэрлэгчтэй хийх баталгаажуулалтыг үе шат бүрд уялдуулна."
           />
           <ProcessSteps steps={serviceSteps} />
         </div>
@@ -80,19 +74,19 @@ export default function ServicesPage() {
       <section className="section section--ink">
         <div className="shell detail-grid">
           <div>
-            <SectionHeading
-              eyebrow="Эхний уулзалтад"
-              title="Бэлэн байвал шийдвэр хурдан болно"
+          <SectionHeading
+            eyebrow="Эхний уулзалтад"
+            title="Бэлтгэх зураг, мэдээлэл"
               inverse
             />
           </div>
           <EditorialList
             items={[
               "Барилгын зориулалт ба давхрын тоо",
-              "Шахтын архитектур, бүтээцийн зураг болон бодит хэмжээ",
+              "Барилгын архитектур, бүтээцийн зураг, шахтын бодит хэмжээ",
               "Төлөвлөсөн даац, хурд, зогсолтын тоо",
-              "Цахилгаан хангамж ба машин өрөөний нөхцөл",
-              "Зорчигч, ачааны ашиглалтын төрөл ба оргил ачаалал",
+              "Цахилгаан хангамж, техникийн өрөөний нөхцөл",
+              "Зорчигч, ачааны зориулалт, ашиглалтын ачаалал",
               "Барилгын ажлын явц, талбай бэлэн болох төлөвлөсөн огноо",
             ]}
           />
@@ -102,35 +96,12 @@ export default function ServicesPage() {
       <section className="section section--soft">
         <div className="shell">
           <SectionHeading
-            eyebrow="Төлөвлөлтийн суурь"
-            title="30 хоног · 15 хоногоос · 8 хоногоос"
-            description="Ердийн БНХАУ гаралтай тохиргоонд ашиглах суурь хугацаа. Үе бүрийн эхлэх нөхцөлийг доор тодорхой заав."
-          />
-          <TimelineStrip steps={standardTimeline} />
-          <div className="prose">
-            <p>
-              SEOHYUN болон онцгой хийцтэй төслүүдэд үйлдвэрлэл, логистик,
-              угсралтын хуваарийг тусад нь гаргана. Гааль, зам тээвэр, зураг
-              өөрчлөлт, талбайн бэлэн бус байдал хуваарьт нөлөөлж болно.
-            </p>
-            <PlaceholderBadge label="Эцсийн хугацааг гэрээ, төслийн хуваариар батална" />
-          </div>
-        </div>
-      </section>
-
-      <section className="section">
-        <div className="shell split-feature">
-          <SectionHeading
-            eyebrow="Хүлээлгэн өгсний дараа"
-            title="Зөвхөн өөрийн нийлүүлсэн тоног төхөөрөмжид"
+            eyebrow="Төслийн ерөнхий хугацаа"
+            title="Ердийн захиалга 2–3 сарын хугацаатай"
+            description="БНХАУ-аас захиалах ердийн лифтний үйлдвэрлэл, тээвэр, угсралтын ерөнхий хугацаа."
           />
           <div className="prose">
-            <p>{afterSalesStatement.mn}</p>
-            <p>
-              Энэ нь бусад компанийн төсөлд тусдаа засвар үйлчилгээ авах санал
-              биш. Дуудлагын нөхцөл, баталгаа, сэлбэг, хариу өгөх хугацааг тухайн
-              гэрээгээр тодорхойлно.
-            </p>
+            <p>{standardTimelineSummary.mn}</p>
           </div>
         </div>
       </section>
@@ -138,8 +109,8 @@ export default function ServicesPage() {
       <section className="section">
         <div className="shell">
           <ContactPanel
-            title="Төслийн одоогийн шатнаас эхэлье"
-            description="Барилга 40–45 хувьтай явж байсан ч бодит хэмжилт, техникийн сонголтыг одоо тодорхойлох боломжтой."
+            title="Барилгын ажлын явцаа ярилцъя"
+            description="Барилгын ажил эхэлсэн байсан ч шахтын бодит хэмжилт хийж, техникийн сонголтыг тодорхойлох боломжтой."
           />
         </div>
       </section>

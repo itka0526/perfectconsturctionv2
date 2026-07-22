@@ -1,0 +1,132 @@
+model = "gpt-5.6-sol"
+model_reasoning_effort = "xhigh"
+personality = "pragmatic"
+
+notify = [ "C:\\Users\\ASUS\\AppData\\Local\\OpenAI\\Codex\\runtimes\\cua_node\\03b1cdac8af3a530\\bin\\node_modules\\@oai\\sky\\bin\\windows\\codex-computer-use.exe", "turn-ended" ]
+service_tier = "default"
+
+[marketplaces.openai-bundled]
+last_updated = "2026-07-22T16:21:20Z"
+source_type = "local"
+source = '\\?\C:\Users\ASUS\.codex\.tmp\bundled-marketplaces\openai-bundled'
+
+[marketplaces.openai-primary-runtime]
+last_updated = "2026-07-16T16:44:55Z"
+source_type = "local"
+source = '\\?\C:\Users\ASUS\.cache\codex-runtimes\codex-primary-runtime\plugins\openai-primary-runtime'
+
+[plugins."documents@openai-primary-runtime"]
+enabled = true
+
+[plugins."spreadsheets@openai-primary-runtime"]
+enabled = true
+
+[plugins."presentations@openai-primary-runtime"]
+enabled = true
+
+[plugins."github@openai-curated"]
+enabled = true
+
+[plugins."sites@openai-bundled"]
+enabled = true
+
+[plugins."visualize@openai-bundled"]
+enabled = true
+
+[plugins."pdf@openai-primary-runtime"]
+enabled = true
+
+[plugins."template-creator@openai-primary-runtime"]
+enabled = true
+
+[plugins."browser@openai-bundled"]
+enabled = true
+
+[windows]
+sandbox = "elevated"
+
+[projects.'c:\users\asus\documents\hw\detecting_ai_with_real_ai_[prak__2]']
+trust_level = "trusted"
+
+[projects.'c:\users\asus\documents\hw\preddiplom_praktika_[prak_3]']
+trust_level = "trusted"
+
+[projects.'c:\users\asus\desktop\projects\cs2train']
+trust_level = "trusted"
+
+[projects.'c:\users\asus\documents\diploma']
+trust_level = "trusted"
+
+[projects.'c:\users\asus\desktop\projects\movplay']
+trust_level = "trusted"
+
+[projects.'c:\users\asus\desktop\projects\downsong']
+trust_level = "trusted"
+
+[projects.'c:\users\asus\desktop\projects\contserv']
+trust_level = "trusted"
+
+[projects.'c:\users\asus\documents\codex\2026-07-20\ca']
+trust_level = "trusted"
+
+[projects.'c:\users\asus\desktop\projects\perfectconsturctionv2']
+trust_level = "trusted"
+
+[desktop]
+ambient-suggestions-enabled = true
+appearanceTheme = "dark"
+appearanceDarkCodeThemeId = "absolutely"
+sansFontSize = 14
+codeFontSize = 13
+reviewDelivery = "inline"
+integratedTerminalShell = "gitBash"
+conversationDetailMode = "STEPS_COMMANDS"
+followUpQueueMode = "queue"
+
+[desktop.appearanceDarkChromeTheme]
+accent = "#cc7d5e"
+contrast = 60
+ink = "#f9f9f7"
+opaqueWindows = false
+surface = "#2d2d2b"
+
+[desktop.appearanceDarkChromeTheme.fonts]
+
+[desktop.appearanceDarkChromeTheme.semanticColors]
+diffAdded = "#00c853"
+diffRemoved = "#ff5f38"
+skill = "#cc7d5e"
+
+[mcp_servers.typeui]
+url = "https://mcp.typeui.sh/mcp"
+
+[features]
+codex_hooks = true
+plugin_hooks = true
+js_repl = false
+
+[mcp_servers.node_repl]
+args = []
+command = 'C:\Users\ASUS\AppData\Local\OpenAI\Codex\runtimes\cua_node\03b1cdac8af3a530\bin\node_repl.exe'
+startup_timeout_sec = 120
+
+[mcp_servers.node_repl.env]
+NODE_REPL_NATIVE_PIPE_CONNECT_TIMEOUT_MS = "1000"
+NODE_REPL_NODE_MODULE_DIRS = 'C:\Users\ASUS\AppData\Local\OpenAI\Codex\runtimes\cua_node\03b1cdac8af3a530\bin\node_modules'
+NODE_REPL_NODE_PATH = 'C:\Users\ASUS\AppData\Local\OpenAI\Codex\runtimes\cua_node\03b1cdac8af3a530\bin\node.exe'
+NODE_REPL_TRUSTED_CODE_PATHS = 'C:\Users\ASUS\.codex'
+CODEX_HOME = 'C:\Users\ASUS\.codex'
+NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "7182a69deb1cf34d457c66e124d0df74d480677b1136fc255b1a52074a5b4b6d,7ed52dae165c3bc22b6d24f282e2c1fbc87f6949fbbe037767a7418d8f517f01"
+BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
+NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = "Control the in-app browser in conjunction with the Browser Plugin."
+NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = "Control the Chrome browser in conjunction with the Chrome Plugin. Prefer this method of controlling Chrome over alternatives (such as Computer Use) unless the user explicitly mentions an alternative."
+BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
+BROWSER_USE_CODEX_APP_VERSION = "26.715.70719"
+SKY_CUA_NATIVE_PIPE = "1"
+SKY_CUA_NATIVE_PIPE_DIRECTORY = '\\.\pipe\codex-computer-use-4042f0d2-ac8e-4364-a792-00f0a2fcf50e'
+CODEX_CLI_PATH = 'C:\Users\ASUS\AppData\Local\OpenAI\Codex\bin\05b3ab7eada19011\codex.exe'
+
+[shell_environment_policy.set]
+BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
+NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "7182a69deb1cf34d457c66e124d0df74d480677b1136fc255b1a52074a5b4b6d,7ed52dae165c3bc22b6d24f282e2c1fbc87f6949fbbe037767a7418d8f517f01"
+NODE_REPL_TRUSTED_CODE_PATHS = 'C:\Users\ASUS\.codex'

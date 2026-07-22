@@ -48,7 +48,7 @@ export async function generateMetadata({
   }
 
   return createPageMetadata({
-    title: `${product.seo.title.mn} | Perfect Construction`,
+    title: product.seo.title.mn,
     description: product.seo.description.mn,
     path: product.seo.canonicalPath,
   });
@@ -62,8 +62,8 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
     notFound();
   }
 
-  const applicableBrands = brands.filter((brand) =>
-    product.brandSlugs.includes(brand.slug),
+  const applicableBrands = brands.filter(
+    (brand) => !brand.draft && product.brandSlugs.includes(brand.slug),
   );
   const relatedProjects = projects.filter((project) =>
     product.projectSlugs.includes(project.slug),
@@ -79,7 +79,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
             { name: product.title.mn, path: product.seo.canonicalPath },
           ]),
           serviceJsonLd({
-            name: `${product.title.mn} — төслийн нийлүүлэлт`,
+            name: `${product.title.mn} — нийлүүлэлт, угсралт`,
             description: product.summary.mn,
             path: product.seo.canonicalPath,
           }),
@@ -97,7 +97,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
           />
           <div className="page-hero__grid">
             <div>
-              <p className="eyebrow">Төслөөр тохируулах шийдэл</p>
+              <p className="eyebrow">Захиалгаар үйлдвэрлэнэ</p>
               <h1 className="display">{product.title.mn}</h1>
               <p className="lede">{product.summary.mn}</p>
               {product.verificationStatus === "placeholder" ? (
@@ -123,15 +123,15 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
         <div className="shell detail-grid">
           <div>
             <SectionHeading
-              eyebrow="Хаана тохирох вэ"
-              title="Барилгын хэрэглээ"
+              eyebrow="Зориулалт"
+              title="Ямар барилгад тохирох вэ?"
             />
             <EditorialList items={product.applications.map((item) => item.mn)} />
           </div>
           <div>
             <SectionHeading
-              eyebrow="Юуг тохируулах вэ"
-              title="Боломжит тохиргоо"
+              eyebrow="Сонголт"
+              title="Юуг сонгох вэ?"
             />
             <EditorialList
               items={product.configurations.map((item) => item.mn)}
@@ -144,7 +144,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
         <div className="shell split-feature">
           <SectionHeading
             eyebrow="Техникийн уулзалт"
-            title="Үнийн саналын өмнө шалгах зүйлс"
+            title="Үнийн санал гаргахад шаардлагатай мэдээлэл"
             inverse
           />
           <div className="prose">
@@ -152,8 +152,8 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
               items={product.technicalConsiderations.map((item) => item.mn)}
             />
             <p>
-              Даац, хурд, хэмжээ болон сонголтын албан ёсны хүрээг үйлдвэрлэгчийн
-              баталгаажсан каталог, талбайн бодит нөхцөлтэй хамт тохирно.
+              Даац, хурд, хэмжээ, хийцийн боломжийг үйлдвэрлэгчийн албан ёсны
+              каталог болон талбайн бодит хэмжилтээр баталгаажуулна.
             </p>
           </div>
         </div>
@@ -162,9 +162,9 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
       <section className="section section--soft">
         <div className="shell">
           <SectionHeading
-            eyebrow="Үйлдвэрлэгчийн хувилбар"
-            title="Төсөв, хийц, логистикийг хамтад нь сонгоно"
-            description="Доорх брэндүүдийн боломжит үзүүлэлтийг төсөл тус бүрээр баталгаажуулна."
+            eyebrow="Үйлдвэрлэгч"
+            title="Техникийн үзүүлэлт, төсөв, тээврийг харьцуулна"
+            description="Доорх үйлдвэрлэгчдийн боломжит хэмжээ, даац, хурд, хийцийг төсөл бүрд тусад нь баталгаажуулна."
           />
           <div className="grid-3">
             {applicableBrands.map((brand) => (
@@ -178,9 +178,9 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
         <section className="section">
           <div className="shell">
             <SectionHeading
-              eyebrow="Холбогдох ажил"
-              title="Төслийн жишээнүүд"
-              description="Бодит кейсийн мэдээлэл, зургийг нийтлэх зөвшөөрлийн дараа шинэчилнэ."
+              eyebrow="Холбогдох төсөл"
+              title="Ижил төрлийн гүйцэтгэсэн ажил"
+              description="Төслийн бодит мэдээлэл, зургийг нийтлэх зөвшөөрөл авсны дараа шинэчилнэ."
             />
             <div className="project-grid">
               {relatedProjects.map((project) => (
@@ -194,8 +194,8 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
       <section className="section">
         <div className="shell">
           <ContactPanel
-            title={`${product.title.mn}-ний төслийг ярилцъя`}
-            description="Шахтын зураг, давхар, даац, ашиглалтын зориулалтын мэдээлэл байвал шууд хуваалцаарай. Маягт бөглөх шаардлагагүй."
+            title="Захиалгынхаа талаар ярилцъя"
+            description="Шахтын зураг, давхрын тоо, төлөвлөсөн даац, ашиглалтын зориулалтын мэдээллээ шууд хэлж болно. Маягт бөглөх шаардлагагүй."
           />
         </div>
       </section>

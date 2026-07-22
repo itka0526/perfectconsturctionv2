@@ -27,16 +27,16 @@ const displayFont = Cormorant_Garamond({
 const canonicalUrl = siteSettings.canonicalUrl;
 const socialImage = `${canonicalUrl}/og.png`;
 const description =
-  "Монголын барилгын төсөлд тохирсон лифтний сонголт, нийлүүлэлт, угсралтын инженерийн шийдэл.";
+  "Монголын барилгын төсөлд тохирсон лифтний сонголт, үйлдвэрийн захиалга, тээвэр, угсралт, суурилуулалтын үйлчилгээ.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(canonicalUrl),
   title: {
-    default: "Perfect Construction | Лифтний төслийн шийдэл",
-    template: "%s | Perfect Construction",
+    default: "Төгс Бүтээн Босголт | Лифтний бүтээгдэхүүн, үйлчилгээ",
+    template: "%s | Төгс Бүтээн Босголт",
   },
   description,
-  applicationName: "Perfect Construction",
+  applicationName: "Төгс Бүтээн Босголт",
   alternates: {
     canonical: "/",
     languages: {
@@ -47,21 +47,21 @@ export const metadata: Metadata = {
     type: "website",
     locale: "mn_MN",
     url: canonicalUrl,
-    siteName: "Perfect Construction",
-    title: "Perfect Construction | Лифтний төслийн шийдэл",
+    siteName: "Төгс Бүтээн Босголт",
+    title: "Төгс Бүтээн Босголт | Лифтний бүтээгдэхүүн, үйлчилгээ",
     description,
     images: [
       {
         url: socialImage,
         width: 1728,
         height: 911,
-        alt: "Perfect Construction — Монголын барилгын төсөлд тохирсон лифтний шийдэл",
+        alt: "Төгс Бүтээн Босголт — Монголын барилгын төсөлд тохирсон лифт",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Perfect Construction | Лифтний төслийн шийдэл",
+    title: "Төгс Бүтээн Босголт | Лифтний бүтээгдэхүүн, үйлчилгээ",
     description,
     images: [socialImage],
   },
@@ -92,6 +92,7 @@ export default function RootLayout({
   return (
     <html
       lang="mn"
+      data-scroll-behavior="smooth"
       className={`${bodyFont.variable} ${displayFont.variable}`}
     >
       <body>

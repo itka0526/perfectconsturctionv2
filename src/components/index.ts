@@ -3,6 +3,7 @@ export * from "./breadcrumbs";
 export * from "./button-link";
 export * from "./contact-panel";
 export * from "./gallery";
+export * from "./hero-video";
 export * from "./logo";
 export * from "./placeholder-badge";
 export * from "./preview-indicator";

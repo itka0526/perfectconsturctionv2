@@ -4,10 +4,10 @@ export interface NavigationItem {
 }
 
 export const primaryNavigation: NavigationItem[] = [
-  { href: "/products", label: "Шийдлүүд" },
+  { href: "/products", label: "Бүтээгдэхүүн" },
   { href: "/brands", label: "Үйлдвэрлэгчид" },
   { href: "/projects", label: "Төслүүд" },
-  { href: "/services", label: "Ажлын явц" },
+  { href: "/services", label: "Ажлын үе шат" },
   { href: "/about", label: "Бидний тухай" },
   { href: "/resources", label: "Мэдээлэл" },
 ];

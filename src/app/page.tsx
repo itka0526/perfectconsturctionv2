@@ -4,22 +4,20 @@ import {
   BrandCard,
   ButtonLink,
   ContactPanel,
-  PlaceholderBadge,
+  HeroVideo,
   ProcessSteps,
   ProductCard,
   ProjectCard,
   ProjectImage,
   SectionHeading,
-  TimelineStrip,
 } from "@/components";
 import {
   assets,
   brands,
   products,
   projects,
-  proofMetrics,
   serviceSteps,
-  standardTimeline,
+  standardTimelineSummary,
 } from "@/content";
 import { createPageMetadata } from "@/lib/metadata";
 import {
@@ -30,41 +28,41 @@ import {
 import { JsonLd } from "./_route-helpers";
 
 export const metadata = createPageMetadata({
-  title: "Төсөлд тохирсон лифтний шийдэл | Perfect Construction",
+  title: "Барилгын төсөлд тохирсон лифт | Төгс Бүтээн Босголт",
   description:
-    "Perfect Construction нь Монголын барилгын шинэ төсөлд лифтний техникийн сонголт, үйлдвэрлэл, хүргэлт, угсралтыг нэг урсгалаар зохион байгуулна.",
+    "Төгс Бүтээн Босголт нь шинэ барилгын лифтний сонголт, үйлдвэрийн захиалга, тээвэр, угсралт, суурилуулалтыг зохион байгуулна.",
   path: "/",
 });
 
 const applications = [
   {
     title: "Орон сууц",
-    description: "Оршин суугчдын урсгал, давхар, даацад тохирсон зорчигчийн лифт.",
+    description: "Давхрын тоо, оршин суугчдын ачаалал, өдөр тутмын хэрэглээнд тохирсон зорчигчийн лифт.",
     href: "/products/passenger-elevator",
   },
   {
-    title: "Хувийн сууц",
-    description: "Орон зай, интерьер, өдөр тутмын хэрэглээнд нийцсэн гэрийн лифт.",
+    title: "Амины орон сууц",
+    description: "Зай талбай бага эзлэх, дотоод засалтай зохицох амины орон сууцны лифт.",
     href: "/products/home-elevator",
   },
   {
     title: "Эмнэлэг",
-    description: "Ор, тоног төхөөрөмж, ажилтны хөдөлгөөнийг тооцсон шийдэл.",
+    description: "Өвчтөний ор, эмнэлгийн тоног төхөөрөмж зөөвөрлөхөд зориулсан кабинтай лифт.",
     href: "/products/hospital-elevator",
   },
   {
     title: "Үйлдвэр ба агуулах",
-    description: "Ачааны төрөл, даац, хаалга, ажлын давтамжаар тохируулна.",
+    description: "Бараа, материалын жин, хэмжээ, зөөвөрлөх давтамжид тохирсон ачааны лифт.",
     href: "/products/cargo-elevator",
   },
   {
     title: "Худалдаа, үйлчилгээ",
-    description: "Хүний урсгал ба архитектурт нийцсэн лифт, урсдаг шат.",
+    description: "Зорчигчдын ачаалал ихтэй барилгад зориулсан лифт, урсдаг шат, урсдаг зам.",
     href: "/products/escalator-moving-walk",
   },
   {
-    title: "Зочид буудал ба оффис",
-    description: "Зорчигчийн туршлага, өнгөлгөө, ашиглалтын ачааллын тэнцвэр.",
+    title: "Зочид буудал, оффис",
+    description: "Барилгын дотоод засал, зорчигчдын ачаалалд тохирсон лифт.",
     href: "/products/panoramic-elevator",
   },
 ];
@@ -76,23 +74,23 @@ export default function HomePage() {
         data={[
           organizationJsonLd(),
           serviceJsonLd({
-            name: "Шинэ төслийн лифтний шийдэл",
+            name: "Шинэ барилгын лифтний нийлүүлэлт, угсралт",
             description:
-              "Талбайн хэмжилтээс ашиглалтад оруулах хүртэлх төслийн үйлчилгээ.",
+              "Талбайн хэмжилт, техникийн сонголт, үйлдвэрийн захиалга, тээвэр, угсралтын үйлчилгээ.",
             path: "/services",
           }),
         ]}
       />
 
-      <section className="page-hero section">
+      <section className="page-hero page-hero--home section">
         <div className="shell page-hero__grid">
           <div>
-            <p className="eyebrow">Perfect Construction · Монгол</p>
-            <h1 className="display">Барилга бүрд тохирсон лифтний шийдэл</h1>
+            <p className="eyebrow">Төгс Бүтээн Босголт · Монгол</p>
+            <h1 className="display">Барилгын төсөл бүрд тохирсон лифт</h1>
             <p className="lede">
-              Шахтын бодит хэмжээ, ашиглалтын ачаалал, төсөв, архитектурт
-              тулгуурлан техникийн сонголтоос угсралт хүртэл нэг багтай
-              ажиллана.
+              Барилгын зориулалт, шахтын хэмжээ, даац, ашиглалтын нөхцөл,
+              төсөвт нийцүүлэн лифт сонгож, үйлдвэрт захиалах, тээвэрлэх,
+              угсарч суурилуулах ажлыг зохион байгуулна.
             </p>
             <div className="button-row">
               <ButtonLink href="/contact">Төслийн талаар ярилцах</ButtonLink>
@@ -101,45 +99,16 @@ export default function HomePage() {
               </ButtonLink>
             </div>
           </div>
-          <ProjectImage
-            asset={assets.homepage.hero}
-            priority
-            sizes="(max-width: 768px) 100vw, 54vw"
-            caption="Монголд хэрэгжүүлсэн бодит төслийн зургаар солино."
-          />
-        </div>
-      </section>
-
-      <section className="section section--ink" aria-labelledby="proof-title">
-        <div className="shell">
-          <SectionHeading
-            eyebrow="Орон нутгийн хариуцлага"
-            title="Шийдвэр гаргахад хэрэгтэй нотолгоо"
-            description="Үзүүлэлтүүдийг баримтаар баталгаажуулсны дараа үйлдвэрлэлийн хувилбарт нийтэлнэ."
-            inverse
-          />
-          <h2 id="proof-title" className="sr-only">
-            Компанийн гол үзүүлэлт
-          </h2>
-          <div className="proof-grid">
-            {proofMetrics.map((metric) => (
-              <article className="card" key={metric.id}>
-                <PlaceholderBadge />
-                <strong className="display">{metric.value.mn}</strong>
-                <p>{metric.label.mn}</p>
-                {metric.note ? <small>{metric.note.mn}</small> : null}
-              </article>
-            ))}
-          </div>
+          <HeroVideo src={assets.homepage.elevatorDescentVideo.src} />
         </div>
       </section>
 
       <section className="section" aria-labelledby="applications-title">
         <div className="shell">
           <SectionHeading
-            eyebrow="Барилгын зориулалтаар"
-            title="Зөв бүтээгдэхүүнээс өмнө зөв хэрэглээг тодорхойлно"
-            description="Брэндээс эхлэхийн оронд барилгын урсгал, хэмжээ, ашиглалтын нөхцөлийг эхэлж ярилцана."
+            eyebrow="Барилгын зориулалт"
+            title="Барилгын зориулалтад тохирох лифт"
+            description="Орон сууц, эмнэлэг, үйлдвэр, худалдаа, үйлчилгээний барилга бүрийн ачаалал, орон зай, ашиглалтын нөхцөл өөр байдаг."
           />
           <div className="grid-3" id="applications-title">
             {applications.map((application, index) => (
@@ -149,7 +118,7 @@ export default function HomePage() {
                   <h3>{application.title}</h3>
                   <p>{application.description}</p>
                   <Link className="link-arrow" href={application.href}>
-                    Шийдлийг үзэх <span aria-hidden="true">→</span>
+                    Бүтээгдэхүүнийг үзэх <span aria-hidden="true">→</span>
                   </Link>
                 </div>
               </article>
@@ -161,9 +130,9 @@ export default function HomePage() {
       <section className="section section--soft">
         <div className="shell">
           <SectionHeading
-            eyebrow="Тэргүүлэх ангилал"
-            title="Төслийн хэрэгцээнд нийцүүлэх бүтээгдэхүүнүүд"
-            description="Нарийвчилсан үзүүлэлтийг талбай, зураг, ашиглалтын нөхцөлтэй хамт сонгоно."
+            eyebrow="Бүтээгдэхүүн"
+            title="Барилгадаа тохирох бүтээгдэхүүнийг сонгоно"
+            description="Лифтний төрөл, даац, хурд, хийц, өнгөлгөөг барилгын зураг төсөл, шахтын хэмжээ, ашиглалтын нөхцөлд тулгуурлан сонгоно."
             action={
               <ButtonLink href="/products" variant="text">
                 Бүх бүтээгдэхүүн
@@ -184,17 +153,17 @@ export default function HomePage() {
       <section className="section">
         <div className="shell">
           <SectionHeading
-            eyebrow="Үйлдвэрлэгчийн сонголт"
-            title="Гурван брэнд, нэг төслийн хариуцлага"
-            description="Брэнд бүрийн гарал, өртөг, логистик, боломжит тохиргоог Perfect Construction төслийн нөхцөлтэй уялдуулна."
+            eyebrow="Үйлдвэрлэгчид"
+            title="Төслийн шаардлагад тохирох үйлдвэрлэгч"
+            description="Барилгын зориулалт, техникийн үзүүлэлт, төсөв, тээврийн хугацааг харгалзан үйлдвэрлэгчийн боломжит хувилбарыг санал болгоно."
             action={
               <ButtonLink href="/brands" variant="text">
-                Брэндүүдийг харьцуулах
+                Үйлдвэрлэгчдийг үзэх
               </ButtonLink>
             }
           />
           <div className="brand-rail">
-            {brands.map((brand) => (
+            {brands.filter((brand) => !brand.draft).map((brand) => (
               <BrandCard brand={brand} key={brand.slug} />
             ))}
           </div>
@@ -205,21 +174,20 @@ export default function HomePage() {
         <div className="shell split-feature">
           <div>
             <p className="eyebrow">Агуулахын бэлэн бараа биш</p>
-            <h2 className="display">Лифт бүр төслийн үзүүлэлтээр үйлдвэрлэгдэнэ</h2>
+            <h2 className="display">Лифт бүр батлагдсан үзүүлэлтээр үйлдвэрлэгдэнэ</h2>
           </div>
           <div className="prose">
             <p>
-              Даац, хурд, зогсолтын тоо, шахтын хэмжээ, хаалга, кабин, цахилгаан
-              хангамж төслөөс төсөлд өөр байдаг. Иймээс үйлдвэрлэл, хүргэлт,
-              угсралтын хугацаа нь батлагдсан үзүүлэлт болон талбайн бэлэн
-              байдлаас эхэлнэ.
+              Даац, хурд, зогсолтын тоо, шахтын хэмжээ, хаалга, кабин,
+              цахилгаан хангамж барилга бүрд өөр. Иймээс үйлдвэрлэл, тээвэр,
+              угсралтын хуваарийг батлагдсан техникийн үзүүлэлт болон талбайн
+              бэлэн байдалд тулгуурлан гаргана.
             </p>
             <p>
-              Талбайн хэмжилт, шаардлагатай мэдээлэл бүрэн үед урьдчилсан
-              <strong> үнийн санал</strong>-ыг дараагийн ажлын өдөрт багтаан
-              бэлтгэх зорилготой. Энэ хугацааг нийтлэхээс өмнө баталгаажуулна.
+              Талбайн хэмжилт хийж, шаардлагатай мэдээлэл бүрдсэн бол урьдчилсан{" "}
+              <strong>үнийн саналыг</strong> дараагийн ажлын өдөрт багтаан
+              бэлтгэнэ.
             </p>
-            <PlaceholderBadge label="Нэхэмжлэл биш — урьдчилсан үнийн санал" />
           </div>
         </div>
       </section>
@@ -227,30 +195,23 @@ export default function HomePage() {
       <section className="section">
         <div className="shell">
           <SectionHeading
-            eyebrow="Төслийн урсгал"
-            title="Уулзалтаас ашиглалтад оруулах хүртэл"
-            description="Захиалагч, барилгын баг, үйлдвэр гурвын шийдвэрийг зургаан тодорхой үе шатанд нэгтгэнэ."
+            eyebrow="Ажлын дараалал"
+            title="Уулзалтаас угсралт, суурилуулалт хүртэл"
+            description="Төслийн шаардлагыг тодорхойлохоос эхлээд хэмжилт, сонголт, үйлдвэрлэл, тээвэр, угсралтыг дарааллаар зохион байгуулна."
           />
           <ProcessSteps steps={serviceSteps} />
         </div>
       </section>
 
-      <section className="section section--soft">
+      <section className="section section--soft section--timeline-summary">
         <div className="shell">
           <SectionHeading
-            eyebrow="Стандарт суурь хугацаа"
-            title="30 хоног · 15 хоногоос · 8 хоногоос"
-            description="Ердийн БНХАУ гаралтай тохиргоонд ашиглах төлөвлөлтийн суурь. Үе бүр зөвхөн доорх эхлэх нөхцөл бүрдсэнээс тоологдоно."
+            eyebrow="Төслийн ерөнхий хугацаа"
+            title="Ердийн захиалга <br/> 2–3 сарын хугацаатай"
+            description="БНХАУ-аас захиалах ердийн лифтний үйлдвэрлэл, тээвэр, угсралтын ерөнхий хугацаа."
           />
-          <TimelineStrip steps={standardTimeline} />
           <div className="prose">
-            <p>
-              SEOHYUN болон онцгой хийцтэй төслүүдэд үйлдвэрлэл, шууд бус
-              тээвэр, угсралтын хуваарийг тусад нь гаргана. Захиалагч техникийн
-              баталгаажуулалт болон талбайн бэлэн байдлаас үл хамааран дурын
-              хүргэлтийн өдөр сонгох боломжгүй.
-            </p>
-            <PlaceholderBadge label="Хугацааны мэдэгдлийг баталгаажуулна" />
+            <p>{standardTimelineSummary.mn}</p>
           </div>
         </div>
       </section>
@@ -258,9 +219,9 @@ export default function HomePage() {
       <section className="section">
         <div className="shell">
           <SectionHeading
-            eyebrow="Монголд хэрэгжүүлсэн ажил"
-            title="Төслийн нөхцөлөөс шийдэл хүртэл"
-            description="Эдгээр кейсийг бодит зураг, хүчин чадал, он, захиалагчийн нийтлэх зөвшөөрлөөр бүрэн болгоно."
+            eyebrow="Гүйцэтгэсэн төслүүд"
+            title="Хэрэгжүүлсэн төслүүд"
+            description="Төслийн нэр, байршил, гүйцэтгэсэн он, зураг, нийтлэх зөвшөөрөл баталгаажсаны дараа мэдээллийг шинэчилнэ."
             action={
               <ButtonLink href="/projects" variant="text">
                 Бүх төсөл
@@ -282,16 +243,16 @@ export default function HomePage() {
       <section className="section section--ink">
         <div className="shell editorial-grid">
           <ProjectImage
-            asset={assets.company.team}
+            asset={assets.certificates.asiaFujiAuthorization}
             sizes="(max-width: 768px) 100vw, 42vw"
-            caption="Инженерийн багийн баталгаажсан зургаар солино."
+            caption="ASIA FUJI-ийн Монгол дахь онцгой төлөөлөгчийн 2026–2029 оны эрхийн баримт."
           />
           <div>
-            <p className="eyebrow">Хариуцлага ба нотолгоо</p>
-            <h2 className="display">Үйлдвэрийн холбоо, инженерийн оролцоо, нэг цэгийн зохион байгуулалт</h2>
+            <p className="eyebrow">Албан ёсны эрх, баримт</p>
+            <h2 className="display">Үйлдвэрлэгчийн эрхийг баримтаар баталгаажуулна</h2>
             <p className="lede">
-              Үйлдвэрлэгчийн эрхийн баримт, багийн мэргэшил, төслийн туршлагыг
-              нийтлэх зөвшөөрөлтэй эх сурвалжаар баталгаажуулна.
+              Үйлдвэрлэгчийн албан ёсны эрх, гэрчилгээ, хүчинтэй хугацааг
+              нийтлэх зөвшөөрөлтэй баримтаар танилцуулна.
             </p>
             <div className="button-row">
               <ButtonLink href="/about" variant="light">
@@ -308,8 +269,8 @@ export default function HomePage() {
       <section className="section">
         <div className="shell">
           <ContactPanel
-            title="Шинэ төслийнхөө нөхцөлийг ярилцъя"
-            description="Шахтын зураг бэлэн эсэхээс үл хамааран барилгын зориулалт, давхар, төлөвлөсөн хугацаагаа утас, и-мэйл эсвэл Facebook-ээр хуваалцаарай. Маягт бөглөх шаардлагагүй."
+            title="Шинэ төслийнхөө талаар ярилцъя"
+            description="Шахтын зураг хараахан бэлэн болоогүй байсан ч барилгын зориулалт, давхрын тоо, төлөвлөсөн хугацаагаа утас, и-мэйл эсвэл Facebook-ээр хэлж болно. Маягт бөглөх шаардлагагүй."
           />
         </div>
       </section>

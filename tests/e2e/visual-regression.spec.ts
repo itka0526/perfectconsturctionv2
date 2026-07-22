@@ -8,13 +8,12 @@ const viewports = [
 ] as const;
 
 test.describe("homepage visual regression", () => {
-  test.skip(
-    ({ browserName }) => browserName !== "chromium",
-    "Keep canonical visual baselines in Chromium; cross-browser behavior is covered separately.",
-  );
-
   for (const viewport of viewports) {
-    test(`${viewport.name} remains visually stable`, async ({ page }) => {
+    test(`${viewport.name} remains visually stable`, async ({ page }, testInfo) => {
+      test.skip(
+        testInfo.project.name !== "chromium-desktop",
+        "Keep canonical visual baselines in Chromium desktop; cross-browser behavior is covered separately.",
+      );
       await page.setViewportSize({ width: viewport.width, height: viewport.height });
       await page.goto("/");
       await page.evaluate(() => document.fonts.ready);

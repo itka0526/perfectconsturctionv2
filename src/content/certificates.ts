@@ -4,7 +4,7 @@ import type { Certificate } from "./types";
 export const certificates: Certificate[] = [
   {
     slug: "seohyun-authorization",
-    draft: false,
+    draft: true,
     verificationStatus: "placeholder",
     title: { mn: "SEOHYUN эрхийн баримт" },
     summary: { mn: "Нийтлэх зөвшөөрөл болон хүчинтэй хугацааг баталгаажуулна." },
@@ -22,7 +22,7 @@ export const certificates: Certificate[] = [
   },
   {
     slug: "fuji-precision-authorization",
-    draft: false,
+    draft: true,
     verificationStatus: "placeholder",
     title: { mn: "FUJI Precision эрхийн баримт" },
     summary: { mn: "Нийтлэх зөвшөөрөл болон хүчинтэй хугацааг баталгаажуулна." },
@@ -44,7 +44,7 @@ export const certificates: Certificate[] = [
     verificationStatus: "verified",
     title: { mn: "ASIA FUJI Монгол дахь онцгой төлөөлөгчийн эрхийн баримт" },
     summary: {
-      mn: "Perfect Construction International LLC-ийг Монгол Улсад ASIA FUJI лифт, урсдаг шат, урсдаг замын маркетинг, түгээлт, борлуулалт, үйлчилгээний эрхтэй онцгой төлөөлөгчөөр томилсон баримт. 2026.03.27-2029.03.27 хүртэл хүчинтэй.",
+      mn: "Suzhou Asia Fuji Elevator Co., Ltd.-ээс Perfect Construction International LLC-ийг Монгол Улс дахь лифт, урсдаг шат, урсдаг замын онцгой төлөөлөгчөөр томилсон баримт. 2026.03.27–2029.03.27 хүртэл хүчинтэй.",
     },
     brandSlug: "asia-fuji",
     issuer: { mn: "Suzhou Asia Fuji Elevator Co., Ltd." },

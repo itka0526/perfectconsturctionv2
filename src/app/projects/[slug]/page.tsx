@@ -45,7 +45,7 @@ export async function generateMetadata({
   }
 
   return createPageMetadata({
-    title: `${project.seo.title.mn} | Perfect Construction`,
+    title: project.seo.title.mn,
     description: project.seo.description.mn,
     path: project.seo.canonicalPath,
   });
@@ -94,7 +94,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
               </p>
               <h1 className="display">{project.title.mn}</h1>
               <p className="lede">{project.summary.mn}</p>
-              <PlaceholderBadge label="Кейсийн мэдээлэл, зургийг баталгаажуулна" />
+              <PlaceholderBadge label="Төслийн мэдээлэл, зургийг баталгаажуулна" />
             </div>
             <ProjectImage
               asset={project.assets[0]}
@@ -126,7 +126,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
       <section className="section">
         <div className="shell detail-grid">
           <article>
-            <p className="eyebrow">Төслийн сорилт</p>
+            <p className="eyebrow">Барилгын нөхцөл</p>
             <h2>{project.challenge.mn}</h2>
             <PlaceholderBadge />
           </article>
@@ -141,12 +141,12 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
       <section className="section section--ink">
         <div className="shell">
           <SectionHeading
-            eyebrow="Төслийн дүрслэл"
-            title="Талбай, угсралт, бэлэн болсон үр дүн"
-            description="Доорх галерейд зөвхөн тухайн төслийн нийтлэх зөвшөөрөлтэй зургууд орно."
+            eyebrow="Төслийн зураг"
+            title="Талбай, угсралтын явц, дууссан ажил"
+            description="Доорх зургийн цомогт зөвхөн тухайн төслийн нийтлэх зөвшөөрөлтэй зургууд орно."
             inverse
           />
-          <Gallery assets={project.assets} label={`${project.title.mn} галерей`} />
+          <Gallery assets={project.assets} label={`${project.title.mn} зургийн цомог`} />
         </div>
       </section>
 
@@ -176,7 +176,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
         <div className="shell">
           <ContactPanel
             title="Ижил төрлийн төслөө ярилцъя"
-            description="Энэ кейсийг шууд хуулбарлах бус, таны барилгын бодит хэмжээ, хэрэглээнд нийцсэн хувилбарыг тодорхойлно."
+            description="Барилга бүрийн хэмжээ, зориулалт, ашиглалтын нөхцөл өөр тул таны төсөлд тохирох хувилбарыг тусад нь тодорхойлно."
           />
         </div>
       </section>

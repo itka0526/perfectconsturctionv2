@@ -25,9 +25,15 @@ const channelIcons: Partial<Record<ContactChannelKind, LucideIcon>> = {
 
 export function ContactPanel({
   title = "Төслийн талаар ярилцах",
-  description = "Барилгын зориулалт, явц, шахтын мэдээллээ ярилцаад дараагийн техникийн алхмаа тодорхойлоорой.",
+  description = "Барилгын зориулалт, ажлын явц, шахтын хэмжээ болон хэрэгцээгээ ярилцаж, тохирох лифтээ сонгоорой.",
   className = "",
 }: ContactPanelProps) {
+  const phones = siteSettings.contacts.filter(
+    (contact) => contact.kind === "phone",
+  );
+  const otherContacts = siteSettings.contacts.filter(
+    (contact) => contact.kind !== "phone",
+  );
   const containsPlaceholder = siteSettings.contacts.some(
     (contact) => contact.verificationStatus === "placeholder",
   );
@@ -41,17 +47,42 @@ export function ContactPanel({
         {containsPlaceholder && (
           <p className="contact-panel__notice">
             <PlaceholderBadge label="Preview" />
-            Холбоо барих мэдээллийг нийтлэхээс өмнө баталгаажуулна.
+            Түр тэмдэглэгээтэй холбоо барих мэдээллийг нийтлэхээс өмнө
+            баталгаажуулна.
           </p>
         )}
       </div>
       <ul className="contact-panel__channels">
-        {siteSettings.contacts.map((contact) => {
+        {phones.length > 0 && (
+          <li className="contact-panel__phone-group">
+            <span className="contact-panel__icon" aria-hidden="true">
+              <Phone size={21} strokeWidth={1.7} />
+            </span>
+            <div className="contact-panel__phone-content">
+              <small>Утас</small>
+              <div className="contact-panel__phone-list">
+                {phones.map((phone) => (
+                  <TrackedLink
+                    className="contact-panel__phone-link"
+                    href={phone.href}
+                    eventName="contact_click"
+                    eventContext={`panel_${phone.id}`}
+                    key={phone.id}
+                  >
+                    {phone.value}
+                  </TrackedLink>
+                ))}
+              </div>
+            </div>
+          </li>
+        )}
+        {otherContacts.map((contact) => {
           const Icon = channelIcons[contact.kind] ?? MapPin;
 
           return (
             <li key={contact.id}>
               <TrackedLink
+                className="contact-panel__channel"
                 href={contact.href}
                 external={contact.external}
                 eventName="contact_click"
@@ -64,9 +95,6 @@ export function ContactPanel({
                   <small>{contact.label.mn}</small>
                   <strong>{contact.value}</strong>
                 </span>
-                {contact.verificationStatus === "placeholder" && (
-                  <PlaceholderBadge label="Түр" />
-                )}
                 <span className="contact-panel__arrow" aria-hidden="true">
                   →
                 </span>

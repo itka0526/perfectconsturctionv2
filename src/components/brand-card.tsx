@@ -36,7 +36,7 @@ export function BrandCard({ brand }: BrandCardProps) {
           eventName="brand_click"
           eventContext={brand.slug}
         >
-          Брэндийн тухай
+          Үйлдвэрлэгчийн тухай
         </ButtonLink>
       </div>
     </article>

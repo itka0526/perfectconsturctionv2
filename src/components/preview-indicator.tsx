@@ -8,7 +8,7 @@ export function PreviewIndicator() {
       <div className="shell">
         <strong>Урьдчилсан хувилбар</strong>
         <span aria-hidden="true">·</span>
-        <span>Зураг, баримт, холбоо барих мэдээллийн хэсэг баталгаажаагүй.</span>
+        <span>Төслийн зураг, зарим баримт, газрын зургийн яг цэг баталгаажаагүй.</span>
       </div>
     </div>
   );

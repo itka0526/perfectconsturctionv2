@@ -1,4 +1,4 @@
-import { allAssetRefs } from "./assets";
+import { allAssetRefs, assets } from "./assets";
 import { brands } from "./brands";
 import { catalogues } from "./catalogues";
 import { certificates } from "./certificates";
@@ -275,6 +275,22 @@ export function validateContent(
   }
 
   if (production) {
+    const standalonePublicAssets = [
+      ["site.logo", assets.company.logo],
+      ["site.office", assets.company.office],
+      ["homepage.hero", assets.homepage.hero],
+    ] as const;
+
+    standalonePublicAssets.forEach(([path, asset]) => {
+      if (asset.verificationStatus !== "verified") {
+        issues.push({
+          code: "placeholder-asset",
+          path,
+          message: "A standalone public asset is still marked as placeholder.",
+        });
+      }
+    });
+
     siteSettings.contacts.forEach((contact) => {
       if (contact.verificationStatus !== "verified") {
         issues.push({

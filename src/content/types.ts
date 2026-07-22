@@ -56,6 +56,7 @@ export interface SiteSettings {
   activeLocales: Locale[];
   defaultLocale: Locale;
   address: LocalizedText;
+  shortAddress: LocalizedText;
   addressVerificationStatus: VerificationStatus;
   contacts: ContactChannel[];
 }

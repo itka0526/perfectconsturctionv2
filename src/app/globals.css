@@ -8,6 +8,8 @@
   --green: #3f876f;
   --green-dark: #2f6957;
   --green-pale: #dfece7;
+  --logo-blue: #2e3094;
+  --logo-green: #027a3d;
   --paper: #ffffff;
   --paper-warm: #f5f4ef;
   --paper-cool: #f1f4f5;
@@ -17,8 +19,24 @@
   --muted: #5e6d7a;
   --shadow: 0 24px 64px rgb(7 29 51 / 10%);
   --shell: 1280px;
-  --gutter: clamp(1rem, 3vw, 2.5rem);
-  --section-space: clamp(4.5rem, 8vw, 8.5rem);
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --gutter: clamp(1.25rem, 3.5vw, 3rem);
+  --section-space: clamp(4rem, 6vw, 6rem);
+  --section-heading-space: clamp(2.5rem, 4vw, 4rem);
+  --content-gap: clamp(1.5rem, 3vw, 3rem);
+  --layout-gap: clamp(2rem, 5vw, 5rem);
+  --cluster-gap: clamp(1rem, 2vw, 2rem);
+  --grid-gap: clamp(1rem, 2vw, 2rem);
+  --card-space: clamp(1.25rem, 2.25vw, 2rem);
+  --feature-space: clamp(2rem, 4vw, 3.5rem);
+  --panel-space: clamp(2rem, 5vw, 5rem);
   --font-sans: var(--font-body), "Arial", sans-serif;
   --font-serif: var(--font-display), "Georgia", serif;
 }
@@ -147,7 +165,7 @@ svg {
   left: 0.75rem;
   z-index: 200;
   min-height: 44px;
-  padding: 0.65rem 1rem;
+  padding: var(--space-3) var(--space-4);
   transform: translateY(-160%);
   background: var(--paper);
   border: 2px solid var(--ink);
@@ -175,7 +193,7 @@ svg {
   min-height: 34px;
   align-items: center;
   justify-content: center;
-  gap: 0.55rem;
+  gap: var(--space-2);
   text-align: center;
 }
 
@@ -183,7 +201,7 @@ svg {
   display: inline-flex;
   min-height: 22px;
   align-items: center;
-  padding: 0.17rem 0.46rem;
+  padding: var(--space-1) var(--space-2);
   border: 1px solid rgb(63 135 111 / 45%);
   background: var(--green-pale);
   color: #204f40;
@@ -217,28 +235,72 @@ svg {
   min-height: 35px;
   align-items: center;
   justify-content: space-between;
-  gap: 1.5rem;
+  gap: clamp(0.75rem, 2vw, 1.5rem);
 }
 
 .utility-bar p {
+  display: flex;
+  min-width: 0;
+  flex: 1 1 auto;
+  align-items: center;
+  gap: 0.45rem;
   margin: 0;
-  letter-spacing: 0.035em;
+  overflow: hidden;
+  letter-spacing: 0.015em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.utility-bar p > svg {
+  flex: 0 0 auto;
+}
+
+.utility-bar p > span:last-child {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.utility-bar p strong {
+  color: var(--paper);
+  font-weight: 700;
 }
 
 .utility-bar ul {
   display: flex;
+  flex: 0 0 auto;
   align-items: center;
-  gap: 1.35rem;
+  gap: clamp(0.75rem, 1.5vw, 1.25rem);
   padding: 0;
   margin: 0;
   list-style: none;
+}
+
+.utility-bar__phones {
+  display: inline-flex;
+  min-height: 35px;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.utility-bar__phones > svg {
+  flex: 0 0 auto;
+}
+
+.utility-bar__phones a {
+  min-height: 35px;
+}
+
+.utility-bar__phone-separator {
+  color: #8fa1b0;
+  line-height: 1;
 }
 
 .utility-bar a {
   display: inline-flex;
   min-height: 35px;
   align-items: center;
-  gap: 0.42rem;
+  gap: var(--space-2);
 }
 
 .utility-bar a:hover {
@@ -263,7 +325,7 @@ svg {
   display: flex;
   min-height: 84px;
   align-items: center;
-  gap: clamp(1.25rem, 2.5vw, 2.75rem);
+  gap: var(--cluster-gap);
 }
 
 .brand-logo {
@@ -271,7 +333,7 @@ svg {
   min-height: 48px;
   flex: 0 0 auto;
   align-items: center;
-  gap: 0.8rem;
+  gap: var(--space-3);
 }
 
 .brand-logo__mark {
@@ -282,40 +344,16 @@ svg {
   flex: 0 0 48px;
   place-items: center;
   overflow: hidden;
-  border: 1px solid currentColor;
-  color: var(--ink);
+  padding: 0;
+  border: 0;
+  background: transparent;
 }
 
-.brand-logo__mark::before {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 13px;
-  width: 1px;
-  background: currentColor;
-  content: "";
-  opacity: 0.35;
-}
-
-.brand-logo__mark::after {
-  position: absolute;
-  top: 13px;
-  right: 0;
-  left: 0;
-  height: 1px;
-  background: currentColor;
-  content: "";
-  opacity: 0.35;
-}
-
-.brand-logo__mark span {
-  position: relative;
-  z-index: 1;
-  margin: 0 0 0.1rem 0.12rem;
-  font-family: var(--font-serif);
-  font-size: 2rem;
-  font-weight: 600;
-  line-height: 1;
+.brand-logo__mark img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .brand-logo__wordmark {
@@ -325,18 +363,18 @@ svg {
 }
 
 .brand-logo__wordmark strong {
-  color: var(--ink);
-  font-size: 0.84rem;
+  color: var(--logo-blue);
+  font-size: 0.88rem;
   font-weight: 800;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
+  letter-spacing: 0.025em;
 }
 
 .brand-logo__wordmark > span {
-  margin-top: 0.25rem;
-  color: var(--muted);
-  font-size: 0.66rem;
-  letter-spacing: 0.035em;
+  margin-top: 0.2rem;
+  color: var(--logo-green);
+  font-size: 0.67rem;
+  font-weight: 700;
+  letter-spacing: 0.025em;
 }
 
 .brand-logo[data-inverse] {
@@ -401,7 +439,7 @@ svg {
 
 .site-header__cta .button {
   min-height: 44px;
-  padding: 0.65rem 0.85rem;
+  padding: var(--space-3) var(--space-4);
   font-size: 0.68rem;
 }
 
@@ -418,8 +456,8 @@ svg {
   min-height: 48px;
   align-items: center;
   justify-content: center;
-  gap: 0.45rem;
-  padding: 0.5rem;
+  gap: var(--space-2);
+  padding: var(--space-2);
   border: 1px solid var(--line);
   background: var(--paper);
   font-size: 0.72rem;
@@ -445,8 +483,8 @@ svg {
 }
 
 .mobile-navigation__panel ul {
-  width: min(calc(100% - 2rem), var(--shell));
-  padding: 0.75rem 0 1.25rem;
+  width: min(calc(100% - (var(--gutter) * 2)), var(--shell));
+  padding: var(--space-3) 0 var(--space-5);
   margin: 0 auto;
   list-style: none;
 }
@@ -460,7 +498,7 @@ svg {
   min-height: 54px;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  gap: var(--space-4);
   color: var(--ink);
   font-size: 0.9rem;
   font-weight: 700;
@@ -471,13 +509,13 @@ svg {
 }
 
 .mobile-navigation__contact {
-  margin-top: 0.8rem;
+  margin-top: var(--space-3);
   border: 0 !important;
   background: var(--ink);
 }
 
 .mobile-navigation__contact a {
-  padding-inline: 1rem;
+  padding-inline: var(--space-4);
   color: var(--paper);
 }
 
@@ -519,7 +557,7 @@ svg {
 
 .page-hero {
   position: relative;
-  padding-block: clamp(4rem, 8vw, 8rem);
+  padding-block: calc(var(--section-space) - 1rem);
   overflow: hidden;
   border-bottom: 1px solid var(--line);
   background: var(--paper-warm);
@@ -539,8 +577,8 @@ svg {
 .page-hero__grid {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
-  align-items: end;
-  gap: clamp(2rem, 5vw, 5rem);
+  align-items: center;
+  gap: var(--layout-gap);
 }
 
 .page-hero__grid > :first-child {
@@ -554,8 +592,8 @@ svg {
 .eyebrow {
   display: flex;
   align-items: center;
-  gap: 0.65rem;
-  margin-bottom: 1.15rem;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
   color: var(--green-dark);
   font-family: var(--font-sans);
   font-size: 0.69rem;
@@ -580,7 +618,7 @@ svg {
 
 .display {
   max-width: 13ch;
-  margin-bottom: 1.5rem;
+  margin-bottom: var(--space-5);
   color: var(--ink);
   font-family: var(--font-serif);
   font-size: clamp(3.2rem, 7.4vw, 7.25rem);
@@ -601,8 +639,8 @@ svg {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   align-items: end;
-  gap: 2rem;
-  margin-bottom: clamp(2.5rem, 5vw, 4.75rem);
+  gap: var(--space-6);
+  margin-bottom: var(--section-heading-space);
 }
 
 .section-heading[data-align="center"] {
@@ -622,7 +660,7 @@ svg {
 
 .section-heading h2 {
   max-width: 18ch;
-  margin-bottom: 1rem;
+  margin-bottom: var(--space-4);
   font-family: var(--font-serif);
   font-size: clamp(2.65rem, 5.1vw, 5.1rem);
   font-weight: 600;
@@ -645,7 +683,7 @@ svg {
 }
 
 .section-heading__action {
-  padding-bottom: 0.4rem;
+  padding-bottom: var(--space-1);
 }
 
 .editorial-grid,
@@ -655,7 +693,7 @@ svg {
 .contact-grid,
 .detail-grid {
   display: grid;
-  gap: clamp(1.5rem, 3vw, 3rem);
+  gap: var(--content-gap);
 }
 
 .editorial-grid {
@@ -675,7 +713,7 @@ svg {
 
 .split-feature {
   align-items: center;
-  gap: clamp(2.5rem, 7vw, 7.5rem);
+  gap: var(--layout-gap);
 }
 
 .detail-grid {
@@ -687,8 +725,8 @@ svg {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 0.75rem;
-  margin-top: 2rem;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
 }
 
 .button,
@@ -697,7 +735,7 @@ svg {
   min-height: 48px;
   align-items: center;
   justify-content: space-between;
-  gap: 1.5rem;
+  gap: var(--space-5);
   border: 1px solid var(--ink);
   background: var(--ink);
   color: var(--paper);
@@ -714,7 +752,7 @@ svg {
 }
 
 .button {
-  padding: 0.85rem 1rem 0.85rem 1.15rem;
+  padding: var(--space-3) var(--space-4);
 }
 
 .button:hover {
@@ -756,7 +794,7 @@ svg {
 .link-arrow {
   width: fit-content;
   min-height: 44px;
-  gap: 0.85rem;
+  gap: var(--space-3);
   border: 0;
   border-bottom: 1px solid currentColor;
   background: transparent;
@@ -782,15 +820,21 @@ svg {
 }
 
 .project-image img {
-  object-fit: cover;
+  object-fit: var(--image-fit, cover);
+  object-position: var(--image-position, center);
+  transform: scale(var(--image-scale, 1));
   transition: transform 420ms ease;
+}
+
+.project-image[data-fit="contain"] {
+  background: var(--paper);
 }
 
 .project-image__status {
   position: absolute;
   z-index: 1;
-  right: 0.75rem;
-  bottom: 0.75rem;
+  right: var(--space-3);
+  bottom: var(--space-3);
 }
 
 .project-image-figure {
@@ -798,20 +842,48 @@ svg {
 }
 
 .project-image-figure figcaption {
-  padding-top: 0.65rem;
+  padding-top: var(--space-3);
   color: var(--muted);
   font-size: 0.75rem;
 }
 
 .card {
+  display: flex;
   min-width: 0;
+  flex-direction: column;
   overflow: hidden;
   border: 1px solid var(--line);
   background: var(--paper);
 }
 
 .card:hover .project-image img {
-  transform: scale(1.025);
+  transform: scale(var(--image-hover-scale, 1.025));
+}
+
+.card:hover .project-image[data-fit="contain"] img {
+  transform: scale(var(--image-scale, 1));
+}
+
+.hero-video {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--ink);
+}
+
+.hero-video video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (min-width: 901px) {
+  .page-hero--home .hero-video {
+    width: 112%;
+    justify-self: end;
+  }
 }
 
 .card__media {
@@ -821,10 +893,11 @@ svg {
 
 .card__body {
   display: flex;
-  min-height: 100%;
+  min-height: 0;
+  flex: 1;
   flex-direction: column;
   align-items: flex-start;
-  padding: clamp(1.25rem, 2.4vw, 2rem);
+  padding: var(--card-space);
 }
 
 .card__meta {
@@ -832,8 +905,8 @@ svg {
   width: 100%;
   flex-wrap: wrap;
   align-items: center;
-  gap: 0.45rem 0.75rem;
-  margin-bottom: 1.25rem;
+  gap: var(--space-2) var(--space-3);
+  margin-bottom: var(--space-4);
   color: var(--steel-light);
   font-size: 0.65rem;
   font-weight: 700;
@@ -842,9 +915,18 @@ svg {
   text-transform: uppercase;
 }
 
+.card > .card__meta {
+  margin-bottom: 0;
+  padding: var(--card-space) var(--card-space) 0;
+}
+
+.card > .card__meta + .card__body {
+  padding-top: var(--space-4);
+}
+
 .card h2,
 .card h3 {
-  margin-bottom: 0.8rem;
+  margin-bottom: var(--space-3);
   font-family: var(--font-serif);
   font-size: clamp(1.85rem, 3vw, 2.7rem);
   font-weight: 600;
@@ -858,7 +940,7 @@ svg {
 }
 
 .card p {
-  margin-bottom: 1.5rem;
+  margin-bottom: var(--space-5);
   color: var(--muted);
   font-size: 0.91rem;
 }
@@ -869,13 +951,17 @@ svg {
 
 .brand-card__media .project-image img {
   object-fit: contain;
-  padding: 1.5rem;
+  padding: 0;
+}
+
+.brand-card__media .project-image {
+  background: var(--paper);
 }
 
 .project-grid {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
-  gap: clamp(1rem, 2.5vw, 2rem);
+  gap: var(--grid-gap);
 }
 
 .project-grid > * {
@@ -895,16 +981,25 @@ svg {
   background: var(--line);
 }
 
+.brand-rail {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .proof-grid > *,
 .brand-rail > * {
   min-width: 0;
-  padding: clamp(1.25rem, 3vw, 2.5rem);
+  padding: var(--card-space);
   background: var(--paper);
+}
+
+.proof-grid > .card > .card__meta {
+  margin-bottom: var(--space-4);
+  padding: 0;
 }
 
 .proof-grid strong {
   display: block;
-  margin-bottom: 0.4rem;
+  margin-bottom: var(--space-2);
   color: var(--ink);
   font-family: var(--font-serif);
   font-size: clamp(2.4rem, 5vw, 4.75rem);
@@ -921,8 +1016,16 @@ svg {
 
 .proof-grid small {
   display: block;
-  margin-top: 0.55rem;
+  margin-top: var(--space-2);
   color: var(--muted);
+}
+
+.section--timeline-summary {
+  padding-block: clamp(3rem, 5vw, 4.5rem);
+}
+
+.section--timeline-summary .section-heading {
+  margin-bottom: clamp(1.5rem, 2.5vw, 2.25rem);
 }
 
 .process-grid,
@@ -935,14 +1038,14 @@ svg {
 
 .process-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(1.5rem, 3.5vw, 3.75rem);
+  gap: var(--content-gap);
 }
 
 .process-step {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);
-  gap: 1.25rem;
-  padding-top: 1.5rem;
+  gap: var(--space-4);
+  padding-top: var(--space-5);
   border-top: 1px solid var(--line);
 }
 
@@ -955,7 +1058,7 @@ svg {
 
 .process-step h3,
 .timeline-step h3 {
-  margin-bottom: 0.65rem;
+  margin-bottom: var(--space-3);
   font-family: var(--font-serif);
   font-size: 1.55rem;
   font-weight: 600;
@@ -963,7 +1066,7 @@ svg {
 
 .process-step p,
 .timeline-step p {
-  margin-bottom: 0.8rem;
+  margin-bottom: var(--space-3);
   color: var(--muted);
   font-size: 0.82rem;
 }
@@ -975,7 +1078,7 @@ svg {
 
 .timeline-step {
   min-width: 0;
-  padding: clamp(1.5rem, 3.5vw, 3rem);
+  padding: var(--card-space);
   border-right: 1px solid var(--line-dark);
   background: var(--ink);
   color: #c6d0d8;
@@ -990,15 +1093,15 @@ svg {
   min-height: 26px;
   align-items: center;
   justify-content: space-between;
-  gap: 0.5rem;
-  margin-bottom: clamp(2rem, 5vw, 4rem);
+  gap: var(--space-2);
+  margin-bottom: var(--feature-space);
   color: #8ca0b1;
   font-size: 0.68rem;
 }
 
 .timeline-step strong {
   display: block;
-  margin-bottom: 0.65rem;
+  margin-bottom: var(--space-3);
   color: #8fd0b9;
   font-family: var(--font-serif);
   font-size: clamp(2.5rem, 5vw, 4.8rem);
@@ -1020,14 +1123,14 @@ svg {
 .contact-panel {
   display: grid;
   grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
-  gap: clamp(2.5rem, 7vw, 7rem);
-  padding: clamp(2rem, 6vw, 5.75rem);
+  gap: var(--layout-gap);
+  padding: var(--panel-space);
   background: var(--ink);
   color: #d8e1e7;
 }
 
 .contact-panel__intro h2 {
-  margin-bottom: 1.25rem;
+  margin-bottom: var(--space-4);
   color: var(--paper);
   font-family: var(--font-serif);
   font-size: clamp(2.7rem, 5vw, 5.2rem);
@@ -1047,8 +1150,8 @@ svg {
 .contact-panel__notice {
   display: flex;
   align-items: flex-start;
-  gap: 0.65rem;
-  margin-top: 1.5rem;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
   font-size: 0.72rem;
 }
 
@@ -1063,18 +1166,51 @@ svg {
   border-bottom: 1px solid var(--line-dark);
 }
 
-.contact-panel__channels a {
+.contact-panel__channel {
   display: grid;
   min-height: 76px;
   grid-template-columns: 44px minmax(0, 1fr) auto auto;
   align-items: center;
-  gap: 0.9rem;
-  padding-block: 0.75rem;
+  gap: var(--space-4);
+  padding-block: var(--space-3);
   transition: color 180ms ease;
 }
 
-.contact-panel__channels a:hover {
+.contact-panel__channel:hover,
+.contact-panel__phone-link:hover {
   color: #8fd0b9;
+}
+
+.contact-panel__phone-group {
+  display: grid;
+  min-height: 96px;
+  grid-template-columns: 44px minmax(0, 1fr);
+  align-items: center;
+  gap: var(--space-4);
+  padding-block: var(--space-3);
+}
+
+.contact-panel__phone-content {
+  min-width: 0;
+}
+
+.contact-panel__phone-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-2);
+}
+
+.contact-panel__phone-link {
+  display: flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  padding-inline: var(--space-2);
+  border: 1px solid var(--line-dark);
+  color: var(--paper);
+  font-size: 0.76rem;
+  font-weight: 700;
+  white-space: nowrap;
 }
 
 .contact-panel__icon {
@@ -1091,7 +1227,7 @@ svg {
 }
 
 .contact-panel__channels small {
-  margin-bottom: 0.12rem;
+  margin-bottom: var(--space-1);
   color: #91a2b0;
   font-size: 0.62rem;
   font-weight: 700;
@@ -1118,8 +1254,8 @@ svg {
 .gallery__controls {
   position: absolute;
   z-index: 2;
-  right: 1rem;
-  bottom: 1rem;
+  right: var(--space-4);
+  bottom: var(--space-4);
   display: flex;
   min-height: 44px;
   align-items: center;
@@ -1145,10 +1281,10 @@ svg {
 
 .gallery__thumbnails {
   display: flex;
-  gap: 0.65rem;
-  margin-top: 0.75rem;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
   overflow-x: auto;
-  padding: 0.25rem;
+  padding: var(--space-1);
 }
 
 .gallery__thumbnails button {
@@ -1173,7 +1309,7 @@ svg {
   display: grid;
   min-height: 280px;
   place-items: center;
-  padding: 2rem;
+  padding: var(--space-6);
   border: 1px solid var(--line);
   background: var(--paper-cool);
   color: var(--muted);
@@ -1183,7 +1319,7 @@ svg {
 /* Long-form and utility page classes */
 
 .breadcrumbs {
-  margin-bottom: clamp(1.75rem, 4vw, 3.5rem);
+  margin-bottom: var(--feature-space);
   color: var(--steel-light);
   font-size: 0.71rem;
 }
@@ -1192,7 +1328,7 @@ svg {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 0.45rem;
+  gap: var(--space-2);
   padding: 0;
   margin: 0;
   list-style: none;
@@ -1201,7 +1337,7 @@ svg {
 .breadcrumbs li {
   display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
+  gap: var(--space-2);
 }
 
 .breadcrumbs a {
@@ -1226,7 +1362,7 @@ svg {
 .prose h2,
 .prose h3 {
   margin-top: 2.4em;
-  margin-bottom: 0.65em;
+  margin-bottom: 0.75em;
   font-family: var(--font-serif);
   font-weight: 600;
   letter-spacing: -0.025em;
@@ -1243,11 +1379,11 @@ svg {
 .prose p,
 .prose ul,
 .prose ol {
-  margin-bottom: 1.35rem;
+  margin-bottom: var(--space-5);
 }
 
 .prose li + li {
-  margin-top: 0.5rem;
+  margin-top: var(--space-2);
 }
 
 .resource-list {
@@ -1258,7 +1394,7 @@ svg {
 }
 
 .resource-list > li {
-  padding: 1.25rem 0;
+  padding: var(--space-5) 0;
   border-bottom: 1px solid var(--line);
 }
 
@@ -1267,7 +1403,7 @@ svg {
   min-height: 44px;
   align-items: center;
   justify-content: space-between;
-  gap: 1.5rem;
+  gap: var(--space-5);
   color: var(--ink);
   font-weight: 700;
 }
@@ -1275,7 +1411,7 @@ svg {
 .certificate-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(1rem, 2.5vw, 2rem);
+  gap: var(--grid-gap);
 }
 
 .error-state {
@@ -1292,7 +1428,7 @@ svg {
   display: grid;
   min-height: 100vh;
   place-items: center;
-  padding: 2rem;
+  padding: var(--space-6);
   background: var(--paper-warm);
 }
 
@@ -1301,7 +1437,7 @@ svg {
 }
 
 .global-error h1 {
-  margin-bottom: 1rem;
+  margin-bottom: var(--space-4);
   font-family: var(--font-serif);
   font-size: clamp(3rem, 8vw, 6.5rem);
   letter-spacing: -0.045em;
@@ -1310,7 +1446,7 @@ svg {
 /* Footer and mobile actions */
 
 .site-footer {
-  padding-top: clamp(4rem, 8vw, 7rem);
+  padding-top: var(--section-space);
   background: #05182a;
   color: #afbdc8;
 }
@@ -1318,13 +1454,17 @@ svg {
 .site-footer__grid {
   display: grid;
   grid-template-columns: 1.7fr 0.75fr 0.75fr 1fr;
-  gap: clamp(2rem, 4vw, 4.5rem);
-  padding-bottom: clamp(3.5rem, 7vw, 6.5rem);
+  gap: var(--content-gap);
+  padding-bottom: var(--section-space);
+}
+
+.site-footer__brand .brand-logo {
+  width: max-content;
 }
 
 .site-footer__brand > p {
   max-width: 42ch;
-  margin-top: 1.75rem;
+  margin-top: var(--space-5);
   color: #9babb8;
   font-size: 0.82rem;
 }
@@ -1332,11 +1472,11 @@ svg {
 .site-footer__preview-note {
   display: flex;
   align-items: flex-start;
-  gap: 0.55rem;
+  gap: var(--space-2);
 }
 
 .site-footer__label {
-  margin-bottom: 1rem;
+  margin-bottom: var(--space-4);
   color: #758999;
   font-size: 0.63rem;
   font-weight: 800;
@@ -1364,13 +1504,35 @@ svg {
 }
 
 .site-footer__contact li + li {
-  margin-top: 0.9rem;
+  margin-top: var(--space-3);
+}
+
+.site-footer__phone-group > span {
+  color: #7f92a1;
+  font-size: 0.62rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.site-footer__phone-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+}
+
+.site-footer__phone-list a {
+  min-height: 28px;
+  color: #dbe3e8;
+  font-size: 0.78rem;
+  font-weight: 700;
 }
 
 .site-footer__contact a {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
-  gap: 0.15rem 0.5rem;
+  gap: var(--space-1) var(--space-2);
   overflow-wrap: anywhere;
 }
 
@@ -1402,8 +1564,8 @@ svg {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 2rem;
-  padding-block: 1.25rem;
+  gap: var(--space-6);
+  padding-block: var(--space-4);
   border-top: 1px solid #253a4d;
   color: #718696;
   font-size: 0.64rem;
@@ -1433,14 +1595,16 @@ svg {
 
   .site-footer__contact {
     grid-column: 1 / -1;
-    padding-top: 2rem;
+    padding-top: var(--space-6);
     border-top: 1px solid #253a4d;
   }
 
   .site-footer__contact ul {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 1rem;
+    grid-template-columns:
+      minmax(0, 0.8fr) minmax(0, 1.35fr)
+      repeat(2, minmax(0, 1fr));
+    gap: var(--space-4);
   }
 
   .site-footer__contact li + li {
@@ -1478,7 +1642,7 @@ svg {
   }
 
   .contact-panel {
-    gap: 2.5rem;
+    gap: var(--space-6);
   }
 
   .site-footer__grid {
@@ -1520,8 +1684,8 @@ svg {
     min-height: 64px;
     align-items: center;
     justify-content: center;
-    gap: 0.55rem;
-    padding: 0.65rem;
+    gap: var(--space-2);
+    padding: var(--space-3);
     color: var(--paper);
     font-size: 0.76rem;
     font-weight: 750;
@@ -1542,15 +1706,11 @@ svg {
 }
 
 @media (max-width: 680px) {
-  :root {
-    --section-space: 4rem;
-  }
-
   .preview-indicator .shell {
     min-height: 42px;
     flex-wrap: wrap;
-    gap: 0.15rem 0.45rem;
-    padding-block: 0.35rem;
+    gap: var(--space-1) var(--space-2);
+    padding-block: var(--space-2);
     line-height: 1.35;
   }
 
@@ -1570,7 +1730,7 @@ svg {
   }
 
   .brand-logo__wordmark > span {
-    display: none;
+    font-size: 0.58rem;
   }
 
   .mobile-navigation__toggle {
@@ -1603,7 +1763,7 @@ svg {
   }
 
   .section-heading__action {
-    margin-top: 1.5rem;
+    margin-top: var(--space-5);
   }
 
   .grid-2,
@@ -1639,12 +1799,8 @@ svg {
     padding-inline: var(--gutter);
   }
 
-  .contact-panel__channels a {
+  .contact-panel__channel {
     grid-template-columns: 44px minmax(0, 1fr) auto;
-  }
-
-  .contact-panel__channels .preview-badge {
-    display: none;
   }
 
   .contact-panel__arrow {
@@ -1665,7 +1821,7 @@ svg {
   }
 
   .site-footer__bottom p + p {
-    margin-top: 0.6rem;
+    margin-top: var(--space-2);
   }
 }
 
@@ -1675,7 +1831,7 @@ svg {
   }
 
   .brand-logo {
-    gap: 0.55rem;
+    gap: var(--space-2);
   }
 
   .brand-logo__wordmark strong {
@@ -1715,6 +1871,6 @@ svg {
 
   .button:hover,
   .card:hover .project-image img {
-    transform: none;
+    transform: scale(var(--image-scale, 1));
   }
 }

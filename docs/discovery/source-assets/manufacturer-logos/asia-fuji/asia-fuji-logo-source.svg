@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <title>Asia Fuji logo</title>
+  <path d="M 0,0 L 200,0 L 200,200 L 0,200 Z" fill="#ffffff"/>
+  <path d="M 175.0,12.0 L 29.0,13.0 L 29.0,28.0 L 58.0,16.0 L 33.0,43.0 L 86.0,16.0 L 36.0,69.0 L 113.0,18.0 L 38.0,94.0 L 139.0,20.0 L 39.0,121.0 L 166.0,22.0 L 32.0,159.0 L 60.0,159.0 L 176.0,43.0 Z" fill="#03559c" stroke="#03559c" stroke-width="0.65" stroke-linejoin="round" fill-rule="evenodd"/>
+  <path d="M 89.0,159.0 L 175.0,159.0 L 176.0,158.0 L 176.0,119.0 L 175.0,118.0 L 129.0,118.0 L 92.0,154.0 Z" fill="#03559c" stroke="#03559c" stroke-width="0.65" stroke-linejoin="round" fill-rule="evenodd"/>
+  <path d="M 175.0,72.0 L 174.0,72.0 L 152.0,94.0 L 153.0,96.0 L 175.0,96.0 L 176.0,95.0 L 176.0,73.0 Z" fill="#03559c" stroke="#03559c" stroke-width="0.65" stroke-linejoin="round" fill-rule="evenodd"/>
+  <text x="29" y="191" fill="#03559c" font-family="Arial Black, Arial, Helvetica, sans-serif" font-size="28" font-weight="900" textLength="147" lengthAdjust="spacingAndGlyphs">ASIA FUJI</text>
+</svg>

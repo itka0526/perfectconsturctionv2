@@ -9,6 +9,9 @@ interface ProjectImageProps {
   priority?: boolean;
   className?: string;
   aspect?: string;
+  scale?: number;
+  position?: string;
+  fit?: "cover" | "contain";
   caption?: string;
 }
 
@@ -18,14 +21,22 @@ export function ProjectImage({
   priority = false,
   className = "",
   aspect,
+  scale = 1,
+  position = "center",
+  fit = "cover",
   caption,
 }: ProjectImageProps) {
   const image = (
     <div
       className={`project-image ${className}`.trim()}
+      data-fit={fit}
       style={
         {
           "--image-aspect": aspect ?? `${asset.width} / ${asset.height}`,
+          "--image-scale": scale,
+          "--image-hover-scale": scale * 1.025,
+          "--image-position": position,
+          "--image-fit": fit,
         } as CSSProperties
       }
     >
