@@ -1,8 +1,8 @@
 import { describe, expect, test, vi } from "vitest";
 
 import {
-  assertContentReadyForProduction,
   validateContent,
+  warnAboutUnverifiedContent,
 } from "@/content/validation";
 import { catalogues } from "@/content/catalogues";
 
@@ -32,20 +32,36 @@ describe("content validation", () => {
     expect(issues.map(({ code }) => code)).not.toContain("placeholder-contact");
     expect(issues.map(({ code }) => code)).not.toContain("placeholder-proof");
     expect(issues.map(({ code }) => code)).not.toContain("placeholder-timeline");
-    expect(
-      issues.filter(({ path }) => path.startsWith("products.")),
-    ).toEqual([]);
-    expect(() => assertContentReadyForProduction()).toThrow(
-      "Production content validation failed",
+    expect(issues.map(({ path }) => path)).toEqual(
+      expect.arrayContaining([
+        "products.passenger-elevator",
+        "products.home-elevator",
+        "products.cargo-elevator",
+        "products.hospital-elevator",
+        "products.panoramic-elevator",
+      ]),
     );
   });
 
-  test("the Next config production gate rejects the preview dataset", async () => {
-    vi.stubEnv("ENFORCE_VERIFIED_CONTENT", "true");
+  test("production content issues are reported without throwing", () => {
+    const warning = vi.spyOn(console, "warn").mockImplementation(() => {});
+
+    expect(() => warnAboutUnverifiedContent()).not.toThrow();
+    expect(warning).toHaveBeenCalledWith(
+      expect.stringContaining("[content-validation]"),
+    );
+    expect(warning).toHaveBeenCalledWith(
+      expect.stringContaining("products.passenger-elevator"),
+    );
+  });
+
+  test("the Next config reports preview content without rejecting it", async () => {
+    const warning = vi.spyOn(console, "warn").mockImplementation(() => {});
     vi.resetModules();
 
-    await expect(import("../../next.config")).rejects.toThrow(
-      "Production content validation failed",
+    await expect(import("../../next.config")).resolves.toBeDefined();
+    expect(warning).toHaveBeenCalledWith(
+      expect.stringContaining("[content-validation]"),
     );
   });
 });

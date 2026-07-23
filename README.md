@@ -32,7 +32,7 @@ pnpm build
 pnpm test:e2e
 ```
 
-Preview and local builds intentionally allow records marked `placeholder` and show a visible preview notice. A Vercel production build, or a build run with `ENFORCE_VERIFIED_CONTENT=true`, fails until every public claim, contact, asset, certificate, and project record passes the production content gate.
+Records marked `placeholder` remain visible in preview mode. The `dev`, `build`, and `start` commands print grouped content-validation warnings for unresolved public claims, contacts, assets, certificates, and project records, but validation warnings do not stop the command.
 
 ## Content and assets
 

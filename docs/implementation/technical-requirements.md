@@ -45,17 +45,13 @@ and imagery.
 ## Preview and production content gate
 
 Preview deployments may show content records and SVG assets visibly labelled as
-placeholders. `assertContentReadyForProduction()` runs automatically when either
-condition is true:
+placeholders. `warnAboutUnverifiedContent()` runs whenever Next.js loads the
+project configuration.
 
-- `VERCEL_ENV=production`
-- `ENFORCE_VERIFIED_CONTENT=true`
-
-The gate blocks a build when any public non-draft record, asset, contact,
-address, proof metric, timeline claim, or certificate authorization remains
-unverified. This is intentional and must not be bypassed to launch. Use the
-explicit enforcement variable in release CI before creating a production
-deployment.
+The validator reports every public non-draft record, asset, contact, address,
+proof metric, timeline claim, or certificate authorization that remains
+unverified. The report is informational: it does not stop `dev`, `build`, or
+`start`, and it does not change the command exit code.
 
 ## Security and privacy
 

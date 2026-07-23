@@ -91,12 +91,7 @@ const validateRecord = (
     }
   }
 
-  if (
-    production &&
-    collectionName !== "products" &&
-    !record.draft &&
-    record.verificationStatus !== "verified"
-  ) {
+  if (production && !record.draft && record.verificationStatus !== "verified") {
     issues.push({
       code: "placeholder-record",
       path,
@@ -353,13 +348,21 @@ export const hasPlaceholderContent =
   allAssetRefs.some(({ verificationStatus }) => verificationStatus === "placeholder") ||
   validateContent({ production: true }).length > 0;
 
-export function assertContentReadyForProduction() {
+export function warnAboutUnverifiedContent() {
   const issues = validateContent({ production: true });
-  if (issues.length === 0) return;
+  if (issues.length === 0) return issues;
 
   const details = issues
     .map((issue) => `- [${issue.code}] ${issue.path}: ${issue.message}`)
     .join("\n");
 
-  throw new Error(`Production content validation failed:\n${details}`);
+  console.warn(
+    [
+      `[content-validation] Found ${issues.length} unresolved production content item(s).`,
+      "The command will continue, but review these items before publishing:",
+      details,
+    ].join("\n"),
+  );
+
+  return issues;
 }

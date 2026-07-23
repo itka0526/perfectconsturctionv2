@@ -126,6 +126,6 @@ For each project replacing `ulaanbaatar-residence`, `city-service-center`, and
 - [ ] Every contact and the office address is verified and tested.
 - [ ] Every proof metric and timeline step is verified.
 - [ ] Every visible certificate has `publicationAuthorized: true`.
-- [ ] `ENFORCE_VERIFIED_CONTENT=true pnpm build` succeeds.
+- [ ] `pnpm build` succeeds and its content-validation warnings have been reviewed.
 - [ ] Lint, strict type-check, unit, Playwright, Axe, link, asset, responsive, and
       client visual-approval checks pass.

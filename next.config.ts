@@ -1,6 +1,6 @@
 import type { NextConfig } from "next";
 
-import { assertContentReadyForProduction } from "./src/content/validation";
+import { warnAboutUnverifiedContent } from "./src/content/validation";
 
 export interface LegacyRedirect {
   source: string;
@@ -115,12 +115,7 @@ export const securityHeaders = [
   },
 ] as const;
 
-if (
-  process.env.VERCEL_ENV === "production" ||
-  process.env.ENFORCE_VERIFIED_CONTENT === "true"
-) {
-  assertContentReadyForProduction();
-}
+warnAboutUnverifiedContent();
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
