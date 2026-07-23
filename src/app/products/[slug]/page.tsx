@@ -63,8 +63,9 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
   const applicableBrands = brands.filter(
     (brand) => !brand.draft && product.brandSlugs.includes(brand.slug),
   );
-  const relatedProjects = projects.filter((project) =>
-    product.projectSlugs.includes(project.slug),
+  const relatedProjects = projects.filter(
+    (project) =>
+      !project.draft && product.projectSlugs.includes(project.slug),
   );
 
   return (

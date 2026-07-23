@@ -28,7 +28,7 @@ const verified = (
 
 export const assets = {
   company: {
-    logo: placeholder(
+    logo: verified(
       "/assets/company/logo/perfect-construction-mark.svg",
       "Төгс Бүтээн Босголт компанийн тэмдэг",
       500,

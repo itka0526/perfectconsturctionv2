@@ -4,7 +4,7 @@ import type { Project } from "./types";
 export const projects: Project[] = [
   {
     slug: "ulaanbaatar-residence",
-    draft: false,
+    draft: true,
     verificationStatus: "placeholder",
     title: { mn: "Орон сууцны төсөл" },
     summary: {
@@ -31,7 +31,7 @@ export const projects: Project[] = [
   },
   {
     slug: "city-service-center",
-    draft: false,
+    draft: true,
     verificationStatus: "placeholder",
     title: { mn: "Үйлчилгээний төв" },
     summary: {
@@ -58,7 +58,7 @@ export const projects: Project[] = [
   },
   {
     slug: "industrial-building",
-    draft: false,
+    draft: true,
     verificationStatus: "placeholder",
     title: { mn: "Үйлдвэрийн барилга" },
     summary: {

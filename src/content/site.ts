@@ -12,7 +12,7 @@ export const siteSettings: SiteSettings = {
   shortAddress: {
     mn: "СБД, 9-р хороо, Дөлгөөн нуур, Компьютер молл төв",
   },
-  addressVerificationStatus: "placeholder",
+  addressVerificationStatus: "verified",
   contacts: [
     {
       id: "phone-primary",
@@ -20,7 +20,7 @@ export const siteSettings: SiteSettings = {
       label: { mn: "Утас" },
       value: "7013-7300",
       href: "tel:+97670137300",
-      verificationStatus: "placeholder",
+      verificationStatus: "verified",
     },
     {
       id: "phone-secondary",
@@ -28,7 +28,7 @@ export const siteSettings: SiteSettings = {
       label: { mn: "Утас" },
       value: "7233-7300",
       href: "tel:+97672337300",
-      verificationStatus: "placeholder",
+      verificationStatus: "verified",
     },
     {
       id: "phone-mobile",
@@ -36,7 +36,7 @@ export const siteSettings: SiteSettings = {
       label: { mn: "Утас" },
       value: "8558-3300",
       href: "tel:+97685583300",
-      verificationStatus: "placeholder",
+      verificationStatus: "verified",
     },
     {
       id: "email-primary",
@@ -44,7 +44,7 @@ export const siteSettings: SiteSettings = {
       label: { mn: "И-мэйл" },
       value: "perfectreconstruction@gmail.com",
       href: "mailto:perfectreconstruction@gmail.com",
-      verificationStatus: "placeholder",
+      verificationStatus: "verified",
     },
     {
       id: "facebook-primary",
@@ -52,7 +52,7 @@ export const siteSettings: SiteSettings = {
       label: { mn: "Facebook" },
       value: "MongolianPerfectConstruction",
       href: "https://www.facebook.com/MongolianPerfectConstruction",
-      verificationStatus: "placeholder",
+      verificationStatus: "verified",
       external: true,
     },
     {
@@ -61,7 +61,7 @@ export const siteSettings: SiteSettings = {
       label: { mn: "Газрын зураг" },
       value: "Компьютер молл төв",
       href: "https://www.google.com/maps/search/?api=1&query=Computer%20Mall%20Ulaanbaatar",
-      verificationStatus: "placeholder",
+      verificationStatus: "verified",
       external: true,
     },
   ],

@@ -234,13 +234,16 @@ export default function HomePage() {
             }
           />
           <div className="project-grid">
-            {projects.slice(0, 3).map((project, index) => (
-              <ProjectCard
-                featured={index === 0}
-                key={project.slug}
-                project={project}
-              />
-            ))}
+            {projects
+              .filter((project) => !project.draft)
+              .slice(0, 3)
+              .map((project, index) => (
+                <ProjectCard
+                  featured={index === 0}
+                  key={project.slug}
+                  project={project}
+                />
+              ))}
           </div>
         </div>
       </section>
