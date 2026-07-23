@@ -22,10 +22,7 @@ export function StickyContactBar() {
         eventContext="sticky_phone"
       >
         <Phone aria-hidden="true" size={20} strokeWidth={1.8} />
-        <span>
-          Утас
-          {phone.verificationStatus === "placeholder" && <small> · Түр</small>}
-        </span>
+        <span>Утас</span>
       </TrackedLink>
       <TrackedLink
         href={email.href}
@@ -33,10 +30,7 @@ export function StickyContactBar() {
         eventContext="sticky_email"
       >
         <Mail aria-hidden="true" size={20} strokeWidth={1.8} />
-        <span>
-          И-мэйл
-          {email.verificationStatus === "placeholder" && <small> · Түр</small>}
-        </span>
+        <span>И-мэйл</span>
       </TrackedLink>
     </nav>
   );

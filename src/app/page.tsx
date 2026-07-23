@@ -4,7 +4,7 @@ import {
   BrandCard,
   ButtonLink,
   ContactPanel,
-  HeroVideo,
+  HomeHeroElevator,
   ProcessSteps,
   ProductCard,
   ProjectCard,
@@ -82,24 +82,29 @@ export default function HomePage() {
         ]}
       />
 
-      <section className="page-hero page-hero--home section">
-        <div className="shell page-hero__grid">
-          <div>
-            <p className="eyebrow">Төгс Бүтээн Босголт · Монгол</p>
-            <h1 className="display">Барилгын төсөл бүрд тохирсон лифт</h1>
-            <p className="lede">
-              Барилгын зориулалт, шахтын хэмжээ, даац, ашиглалтын нөхцөл,
-              төсөвт нийцүүлэн лифт сонгож, үйлдвэрт захиалах, тээвэрлэх,
-              угсарч суурилуулах ажлыг зохион байгуулна.
-            </p>
-            <div className="button-row">
-              <ButtonLink href="/contact">Төслийн талаар ярилцах</ButtonLink>
-              <ButtonLink href="/projects" variant="outline">
-                Гүйцэтгэсэн төслүүд
-              </ButtonLink>
+      <section className="page-hero page-hero--home-static section">
+        <HomeHeroElevator
+          car={assets.homepage.elevatorCar}
+          shaft={assets.homepage.elevatorShaft}
+        />
+        <div className="shell">
+          <div className="page-hero__grid">
+            <div>
+              <p className="eyebrow">Төгс Бүтээн Босголт · Монгол</p>
+              <h1 className="display">Барилгын төсөл бүрд тохирсон лифт</h1>
+              <p className="lede">
+                Барилгын зориулалт, шахтын хэмжээ, даац, ашиглалтын нөхцөл,
+                төсөвт нийцүүлэн лифт сонгож, үйлдвэрт захиалах, тээвэрлэх,
+                угсарч суурилуулах ажлыг зохион байгуулна.
+              </p>
+              <div className="button-row">
+                <ButtonLink href="/contact">Төслийн талаар ярилцах</ButtonLink>
+                <ButtonLink href="/projects" variant="outline">
+                  Гүйцэтгэсэн төслүүд
+                </ButtonLink>
+              </div>
             </div>
           </div>
-          <HeroVideo src={assets.homepage.elevatorDescentVideo.src} />
         </div>
       </section>
 
@@ -173,7 +178,7 @@ export default function HomePage() {
       <section className="section section--ink">
         <div className="shell split-feature">
           <div>
-            <p className="eyebrow">Агуулахын бэлэн бараа биш</p>
+            <p className="eyebrow">Төсөл бүрт тохируулна</p>
             <h2 className="display">Лифт бүр батлагдсан үзүүлэлтээр үйлдвэрлэгдэнэ</h2>
           </div>
           <div className="prose">
@@ -221,7 +226,7 @@ export default function HomePage() {
           <SectionHeading
             eyebrow="Гүйцэтгэсэн төслүүд"
             title="Хэрэгжүүлсэн төслүүд"
-            description="Төслийн нэр, байршил, гүйцэтгэсэн он, зураг, нийтлэх зөвшөөрөл баталгаажсаны дараа мэдээллийг шинэчилнэ."
+            description="Монголд хэрэгжүүлсэн орон сууц, үйлчилгээ, үйлдвэрийн барилгын лифтний төслүүдээс танилцуулна."
             action={
               <ButtonLink href="/projects" variant="text">
                 Бүх төсөл
@@ -249,10 +254,10 @@ export default function HomePage() {
           />
           <div>
             <p className="eyebrow">Албан ёсны эрх, баримт</p>
-            <h2 className="display">Үйлдвэрлэгчийн эрхийг баримтаар баталгаажуулна</h2>
+            <h2 className="display">Үйлдвэрлэгчийн эрх, баримт бичиг</h2>
             <p className="lede">
-              Үйлдвэрлэгчийн албан ёсны эрх, гэрчилгээ, хүчинтэй хугацааг
-              нийтлэх зөвшөөрөлтэй баримтаар танилцуулна.
+              Үйлдвэрлэгчийн албан ёсны эрх, гэрчилгээ, хүчинтэй хугацааны
+              мэдээллийг нэг дор танилцуулна.
             </p>
             <div className="button-row">
               <ButtonLink href="/about" variant="light">
@@ -266,11 +271,11 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section section--contact">
         <div className="shell">
           <ContactPanel
             title="Шинэ төслийнхөө талаар ярилцъя"
-            description="Шахтын зураг хараахан бэлэн болоогүй байсан ч барилгын зориулалт, давхрын тоо, төлөвлөсөн хугацаагаа утас, и-мэйл эсвэл Facebook-ээр хэлж болно. Маягт бөглөх шаардлагагүй."
+            description="Шахтын зураг хараахан бэлэн болоогүй байсан ч барилгын зориулалт, давхрын тоо, төлөвлөсөн хугацаагаа утас, и-мэйл эсвэл Facebook-ээр холбогдоод хэлж болно."
           />
         </div>
       </section>

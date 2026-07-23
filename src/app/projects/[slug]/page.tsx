@@ -3,10 +3,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import {
-  Breadcrumbs,
   ContactPanel,
   Gallery,
-  PlaceholderBadge,
   ProductCard,
   ProjectImage,
   SectionHeading,
@@ -80,13 +78,6 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
       />
       <section className="page-hero section">
         <div className="shell">
-          <Breadcrumbs
-            items={[
-              { label: "Нүүр", href: "/" },
-              { label: "Төсөл", href: "/projects" },
-              { label: project.title.mn },
-            ]}
-          />
           <div className="page-hero__grid">
             <div>
               <p className="eyebrow">
@@ -94,13 +85,11 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
               </p>
               <h1 className="display">{project.title.mn}</h1>
               <p className="lede">{project.summary.mn}</p>
-              <PlaceholderBadge label="Төслийн мэдээлэл, зургийг баталгаажуулна" />
             </div>
             <ProjectImage
               asset={project.assets[0]}
               priority
               sizes="(max-width: 768px) 100vw, 52vw"
-              caption="Захиалагчийн зөвшөөрөлтэй бодит төслийн зургаар солино."
             />
           </div>
         </div>
@@ -128,12 +117,10 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
           <article>
             <p className="eyebrow">Барилгын нөхцөл</p>
             <h2>{project.challenge.mn}</h2>
-            <PlaceholderBadge />
           </article>
           <article>
             <p className="eyebrow">Сонгосон шийдэл</p>
             <h2>{project.solution.mn}</h2>
-            <PlaceholderBadge />
           </article>
         </div>
       </section>
@@ -143,7 +130,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
           <SectionHeading
             eyebrow="Төслийн зураг"
             title="Талбай, угсралтын явц, дууссан ажил"
-            description="Доорх зургийн цомогт зөвхөн тухайн төслийн нийтлэх зөвшөөрөлтэй зургууд орно."
+            description="Төслийн талбай, угсралтын явц, суурилуулсан тоноглолын зургийг үзнэ үү."
             inverse
           />
           <Gallery assets={project.assets} label={`${project.title.mn} зургийн цомог`} />
@@ -172,7 +159,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section section--contact">
         <div className="shell">
           <ContactPanel
             title="Ижил төрлийн төслөө ярилцъя"

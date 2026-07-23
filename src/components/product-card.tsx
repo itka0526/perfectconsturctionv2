@@ -1,6 +1,5 @@
 import type { Product } from "@/content";
 import { ButtonLink } from "./button-link";
-import { PlaceholderBadge } from "./placeholder-badge";
 import { ProjectImage } from "./project-image";
 
 interface ProductCardProps {
@@ -15,7 +14,6 @@ const cardImageSettings: Partial<
   >
 > = {
   "passenger-elevator": { fit: "contain" },
-  "panoramic-elevator": { scale: 1.45 },
   "cargo-elevator": { position: "center 40%" },
 };
 
@@ -41,9 +39,6 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
       <div className="card__body">
         <div className="card__meta">
           <span>Бүтээгдэхүүн</span>
-          {product.verificationStatus === "placeholder" && (
-            <PlaceholderBadge />
-          )}
         </div>
         <h3>{product.title.mn}</h3>
         <p>{product.summary.mn}</p>

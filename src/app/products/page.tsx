@@ -1,5 +1,4 @@
 import {
-  Breadcrumbs,
   ButtonLink,
   ContactPanel,
   ProductCard,
@@ -40,9 +39,6 @@ export default function ProductsPage() {
       />
       <section className="page-hero section">
         <div className="shell">
-          <Breadcrumbs
-            items={[{ label: "Нүүр", href: "/" }, { label: "Бүтээгдэхүүн" }]}
-          />
           <div className="page-hero__grid">
             <div>
               <p className="eyebrow">Бүтээгдэхүүний сонголт</p>
@@ -93,17 +89,17 @@ export default function ProductsPage() {
             </p>
             <p>
               Боломжит хэмжээ, даац, хурд, хийцийг үйлдвэрлэгчийн албан ёсны
-              каталог болон техникийн уулзалтаар баталгаажуулна.
+              каталог, техникийн уулзалтад тулгуурлан сонгоно.
             </p>
           </div>
         </div>
       </section>
 
-      <section className="section">
+      <section className="section section--contact">
         <div className="shell">
           <ContactPanel
             title="Ямар төрлийн лифт хэрэгтэйг хамт тодорхойлъё"
-            description="Барилгын зориулалт, давхрын тоо, төлөвлөсөн даацын мэдээллээ утас, и-мэйл эсвэл Facebook-ээр хэлээрэй."
+            description="Барилгын зориулалт, давхрын тоо, төлөвлөсөн даацын талаар утас, и-мэйл эсвэл Facebook-ээр холбогдож ярилцъя."
           />
         </div>
       </section>

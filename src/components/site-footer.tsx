@@ -4,7 +4,6 @@ import {
   primaryNavigation,
   secondaryNavigation,
 } from "./navigation";
-import { PlaceholderBadge } from "./placeholder-badge";
 import { TrackedLink } from "./tracked-link";
 
 export function SiteFooter() {
@@ -24,12 +23,6 @@ export function SiteFooter() {
             Шинэ барилгын лифтний сонголт, үйлдвэрийн захиалга, тээвэр,
             угсралт, суурилуулалтыг зохион байгуулна.
           </p>
-          {siteSettings.addressVerificationStatus === "placeholder" && (
-            <p className="site-footer__preview-note">
-              <PlaceholderBadge label="Preview" />
-              Хаяг болон холбоо барих мэдээллийг нийтлэхээс өмнө баталгаажуулна.
-            </p>
-          )}
         </div>
         <nav aria-label="Доод цэс">
           <p className="site-footer__label">Үндсэн</p>

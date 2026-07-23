@@ -1,5 +1,4 @@
 import type { ServiceStep } from "@/content";
-import { PlaceholderBadge } from "./placeholder-badge";
 
 interface ProcessStepsProps {
   steps: ServiceStep[];
@@ -18,9 +17,6 @@ export function ProcessSteps({ steps }: ProcessStepsProps) {
             <div>
               <h3>{step.title.mn}</h3>
               <p>{step.description.mn}</p>
-              {step.verificationStatus === "placeholder" && (
-                <PlaceholderBadge />
-              )}
             </div>
           </li>
         ))}

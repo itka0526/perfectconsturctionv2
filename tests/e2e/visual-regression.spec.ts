@@ -15,6 +15,7 @@ test.describe("homepage visual regression", () => {
         "Keep canonical visual baselines in Chromium desktop; cross-browser behavior is covered separately.",
       );
       await page.setViewportSize({ width: viewport.width, height: viewport.height });
+      await page.emulateMedia({ reducedMotion: "reduce" });
       await page.goto("/");
       await page.evaluate(() => document.fonts.ready);
 

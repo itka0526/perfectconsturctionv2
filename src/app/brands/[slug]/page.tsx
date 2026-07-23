@@ -3,10 +3,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import {
-  Breadcrumbs,
   ButtonLink,
   ContactPanel,
-  PlaceholderBadge,
   ProductCard,
   ProjectImage,
   SectionHeading,
@@ -77,21 +75,11 @@ export default async function BrandDetailPage({ params }: BrandPageProps) {
       />
       <section className="page-hero section">
         <div className="shell">
-          <Breadcrumbs
-            items={[
-              { label: "Нүүр", href: "/" },
-              { label: "Үйлдвэрлэгчид", href: "/brands" },
-              { label: brand.title.mn },
-            ]}
-          />
           <div className="page-hero__grid">
             <div>
               <p className="eyebrow">Үйлдвэрлэгч · {brand.origin.mn}</p>
               <h1 className="display">{brand.title.mn}</h1>
               <p className="lede">{brand.summary.mn}</p>
-              {brand.verificationStatus === "placeholder" ? (
-                <PlaceholderBadge label="Үйлдвэрлэгчийн мэдээллийг баталгаажуулна" />
-              ) : null}
               <ButtonLink href="/contact">Үнийн санал авах</ButtonLink>
             </div>
             <ProjectImage
@@ -121,7 +109,7 @@ export default async function BrandDetailPage({ params }: BrandPageProps) {
           <SectionHeading
             eyebrow="Бүтээгдэхүүн"
             title={`${brand.title.mn}-ийн боломжит бүтээгдэхүүнүүд`}
-            description="Загвар, даац, хурд, хийцийн боломжийг үйлдвэрлэгчийн албан ёсны каталогоор баталгаажуулна."
+            description="Загвар, даац, хурд, хийцийн боломжийг үйлдвэрлэгчийн албан ёсны каталогоос сонгоно."
           />
           <div className="grid-3">
             {applicableProducts.map((product) => (
@@ -140,9 +128,6 @@ export default async function BrandDetailPage({ params }: BrandPageProps) {
           />
           <div className="prose">
             <p>{brand.authorizationStatement.mn}</p>
-            {brand.verificationStatus === "placeholder" ? (
-              <PlaceholderBadge label="Нийтлэх зөвшөөрөл хүлээгдэж байна" />
-            ) : null}
             {brandCertificates.map((certificate) => (
               <p key={certificate.slug}>
                 <Link
@@ -157,7 +142,7 @@ export default async function BrandDetailPage({ params }: BrandPageProps) {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section section--contact">
         <div className="shell">
           <ContactPanel
             title={`${brand.title.mn}-ийн бүтээгдэхүүнийг төсөлдөө сонгоё`}

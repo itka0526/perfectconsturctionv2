@@ -1,5 +1,4 @@
 import {
-  Breadcrumbs,
   ButtonLink,
   ContactPanel,
   ProcessSteps,
@@ -40,15 +39,12 @@ export default function ServicesPage() {
       />
       <section className="page-hero section">
         <div className="shell">
-          <Breadcrumbs
-            items={[{ label: "Нүүр", href: "/" }, { label: "Үйлчилгээ" }]}
-          />
           <div className="page-hero__grid">
             <div>
               <p className="eyebrow">Шинэ барилгын төсөл</p>
               <h1 className="display">Хэмжилтээс угсралт, суурилуулалт хүртэл</h1>
             </div>
-            <div>
+            <div className="page-hero__copy-actions">
               <p className="lede">
                 Төгс Бүтээн Босголт шинэ барилгын лифтний хэмжилт, техникийн
                 сонголт, үйлдвэрийн захиалга, тээвэр, угсралт, суурилуулалтыг
@@ -65,14 +61,14 @@ export default function ServicesPage() {
           <SectionHeading
             eyebrow="Зургаан үе шат"
             title="Ажил бүр батлагдсан дарааллаар үргэлжилнэ"
-            description="Захиалагч, барилгын баг, үйлдвэрлэгчтэй хийх баталгаажуулалтыг үе шат бүрд уялдуулна."
+            description="Захиалагч, барилгын баг, үйлдвэрлэгчийн ажлыг үе шат бүрд уялдуулна."
           />
           <ProcessSteps steps={serviceSteps} />
         </div>
       </section>
 
       <section className="section section--ink">
-        <div className="shell detail-grid">
+        <div className="shell detail-grid detail-grid--service-prep">
           <div>
           <SectionHeading
             eyebrow="Эхний уулзалтад"
@@ -106,7 +102,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section section--contact">
         <div className="shell">
           <ContactPanel
             title="Барилгын ажлын явцаа ярилцъя"

@@ -18,11 +18,7 @@ export function Gallery({
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   if (assets.length === 0) {
-    return (
-      <div className="gallery gallery--empty" role="status">
-        Зураг нийтлэх зөвшөөрөл хүлээгдэж байна.
-      </div>
-    );
+    return null;
   }
 
   const safeIndex = Math.min(selectedIndex, assets.length - 1);

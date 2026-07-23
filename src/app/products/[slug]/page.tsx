@@ -3,10 +3,8 @@ import { notFound } from "next/navigation";
 
 import {
   BrandCard,
-  Breadcrumbs,
   ButtonLink,
   ContactPanel,
-  PlaceholderBadge,
   ProjectCard,
   ProjectImage,
   SectionHeading,
@@ -88,21 +86,11 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
 
       <section className="page-hero section">
         <div className="shell">
-          <Breadcrumbs
-            items={[
-              { label: "Нүүр", href: "/" },
-              { label: "Бүтээгдэхүүн", href: "/products" },
-              { label: product.title.mn },
-            ]}
-          />
           <div className="page-hero__grid">
             <div>
               <p className="eyebrow">Захиалгаар үйлдвэрлэнэ</p>
               <h1 className="display">{product.title.mn}</h1>
               <p className="lede">{product.summary.mn}</p>
-              {product.verificationStatus === "placeholder" ? (
-                <PlaceholderBadge />
-              ) : null}
               <div className="button-row">
                 <ButtonLink href="/contact">Төслийн талаар ярилцах</ButtonLink>
                 <ButtonLink href="/resources" variant="outline">
@@ -153,7 +141,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
             />
             <p>
               Даац, хурд, хэмжээ, хийцийн боломжийг үйлдвэрлэгчийн албан ёсны
-              каталог болон талбайн бодит хэмжилтээр баталгаажуулна.
+              каталог болон талбайн бодит хэмжилтэд тулгуурлан сонгоно.
             </p>
           </div>
         </div>
@@ -164,7 +152,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
           <SectionHeading
             eyebrow="Үйлдвэрлэгч"
             title="Техникийн үзүүлэлт, төсөв, тээврийг харьцуулна"
-            description="Доорх үйлдвэрлэгчдийн боломжит хэмжээ, даац, хурд, хийцийг төсөл бүрд тусад нь баталгаажуулна."
+            description="Доорх үйлдвэрлэгчдийн боломжит хэмжээ, даац, хурд, хийцийг төслийн нөхцөлтэй харьцуулна."
           />
           <div className="grid-3">
             {applicableBrands.map((brand) => (
@@ -180,7 +168,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
             <SectionHeading
               eyebrow="Холбогдох төсөл"
               title="Ижил төрлийн гүйцэтгэсэн ажил"
-              description="Төслийн бодит мэдээлэл, зургийг нийтлэх зөвшөөрөл авсны дараа шинэчилнэ."
+              description="Ижил төрлийн барилгад хэрэгжүүлсэн шийдлүүдийг харьцуулж үзнэ үү."
             />
             <div className="project-grid">
               {relatedProjects.map((project) => (
@@ -191,11 +179,11 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
         </section>
       ) : null}
 
-      <section className="section">
+      <section className="section section--contact">
         <div className="shell">
           <ContactPanel
             title="Захиалгынхаа талаар ярилцъя"
-            description="Шахтын зураг, давхрын тоо, төлөвлөсөн даац, ашиглалтын зориулалтын мэдээллээ шууд хэлж болно. Маягт бөглөх шаардлагагүй."
+            description="Шахтын зураг, давхрын тоо, төлөвлөсөн даац, ашиглалтын зориулалтын мэдээллээ шууд хэлж болно."
           />
         </div>
       </section>

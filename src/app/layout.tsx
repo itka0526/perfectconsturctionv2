@@ -3,7 +3,6 @@ import { Cormorant_Garamond, Manrope } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import {
-  PreviewIndicator,
   SiteFooter,
   SiteHeader,
   StickyContactBar,
@@ -105,7 +104,6 @@ export default function RootLayout({
             __html: JSON.stringify(organizationJsonLd).replace(/</g, "\\u003c"),
           }}
         />
-        <PreviewIndicator />
         <SiteHeader />
         <div id="main-content" tabIndex={-1}>
           {children}

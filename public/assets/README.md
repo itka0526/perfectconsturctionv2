@@ -43,3 +43,8 @@ Manufacturer catalogue excerpts must be described as catalogue imagery, not
 as completed Perfect Construction projects. Original catalogues, brochures,
 and certificate scans live under `docs/discovery/source-assets/`; public assets
 contain only the selected web previews approved for the current presentation.
+
+The homepage scroll sequence uses `homepage/elevator-shaft.webp` and
+`homepage/elevator-car.webp`. These are purpose-generated architectural
+visualizations, not photographs of a Perfect Construction project or a named
+manufacturer product.

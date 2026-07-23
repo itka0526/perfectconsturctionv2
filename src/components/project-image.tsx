@@ -1,7 +1,6 @@
 import Image from "next/image";
 import type { CSSProperties } from "react";
 import type { AssetRef } from "@/content";
-import { PlaceholderBadge } from "./placeholder-badge";
 
 interface ProjectImageProps {
   asset: AssetRef;
@@ -39,7 +38,7 @@ export function ProjectImage({
           "--image-fit": fit,
         } as CSSProperties
       }
-    >
+      >
       <Image
         src={asset.src}
         alt={asset.alt.mn}
@@ -47,11 +46,6 @@ export function ProjectImage({
         sizes={sizes}
         priority={priority}
       />
-      {asset.verificationStatus === "placeholder" && (
-        <span className="project-image__status">
-          <PlaceholderBadge label="Түр зураг" />
-        </span>
-      )}
     </div>
   );
 

@@ -1,11 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1280" viewBox="0 0 1920 1280" role="img" aria-labelledby="title desc">
-  <title id="title">Homepage hero preview asset</title>
-  <desc id="desc">Abstract architectural composition. Replace before production.</desc>
+  <title id="title">Elevator architecture illustration</title>
+  <desc id="desc">Abstract architectural composition with a vertical elevator shaft.</desc>
   <rect width="1920" height="1280" fill="#d9dce4"/>
   <rect x="116" y="110" width="1688" height="1060" fill="#eef0f2"/>
   <path d="M116 1170 680 380l342 790zm906 0 314-850 468 850z" fill="#b9c0cc"/>
   <rect x="835" y="220" width="250" height="950" fill="#17264d"/>
   <path d="M960 270v850M885 335h150M885 1050h150" stroke="#58a87d" stroke-width="8"/>
-  <text x="170" y="200" fill="#101b3c" font-family="Arial,sans-serif" font-size="40" font-weight="700">PREVIEW — MONGOLIAN PROJECT IMAGE</text>
-  <text x="170" y="250" fill="#526078" font-family="Arial,sans-serif" font-size="27">REPLACE BEFORE PRODUCTION</text>
 </svg>

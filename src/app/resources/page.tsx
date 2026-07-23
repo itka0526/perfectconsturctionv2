@@ -1,7 +1,6 @@
 import Link from "next/link";
 
 import {
-  Breadcrumbs,
   ContactPanel,
   ProjectImage,
   SectionHeading,
@@ -26,9 +25,9 @@ const faq = [
       "Архитектур, бүтээцийн зураг боловсруулах үед лифтний шаардлагыг тодорхойлбол шахтын хэмжээ, худгийн гүн, техникийн өрөө, цахилгаан хангамжийг зөв төлөвлөхөд тустай. Барилгын ажил эхэлсэн бол талбайд бодит хэмжилт хийнэ.",
   },
   {
-    question: "Лифт бэлэн агуулахад байдаг уу?",
+    question: "Лифтийг хэрхэн захиалж үйлдвэрлүүлдэг вэ?",
     answer:
-      "Шинэ барилгын лифт агуулахын бэлэн бараа биш. Даац, хурд, зогсолтын тоо, хаалга, кабин, шахтын хэмжээг баталсны дараа үйлдвэрт захиална.",
+      "Барилгын зориулалт, шахтын хэмжээ, даац, хурд, зогсолтын тоо, хаалга, кабины сонголтыг тодорхойлсны дараа тухайн төслийн үзүүлэлтээр үйлдвэрт захиална.",
   },
   {
     question: "Үнийн саналд ямар мэдээлэл хэрэгтэй вэ?",
@@ -52,9 +51,6 @@ export default function ResourcesPage() {
       />
       <section className="page-hero section">
         <div className="shell">
-          <Breadcrumbs
-            items={[{ label: "Нүүр", href: "/" }, { label: "Материал" }]}
-          />
           <div className="page-hero__grid">
             <div>
               <p className="eyebrow">Төсөл бэлтгэх мэдээлэл</p>
@@ -70,7 +66,7 @@ export default function ResourcesPage() {
       </section>
 
       <section className="section">
-        <div className="shell detail-grid">
+        <div className="shell detail-grid detail-grid--resources">
           <div>
             <SectionHeading
               eyebrow="01 · Зураг ба хэмжээ"
@@ -122,7 +118,7 @@ export default function ResourcesPage() {
           <SectionHeading
             eyebrow="04 · Үйлдвэрлэгчийн каталог"
             title="Бүтээгдэхүүн, кабин, хийцийн танилцуулга"
-            description="Доорх материалд үйлдвэрлэгчийн бүтээгдэхүүн, хийцийн сонголтыг харуулав. Каталог доторх хуучин холбоо барих мэдээлэл Төгс Бүтээн Босголтын одоогийн мэдээлэл биш. Техникийн үзүүлэлтийг төсөл бүрд тусад нь баталгаажуулна."
+            description="Доорх материалд үйлдвэрлэгчийн бүтээгдэхүүн, кабин, хаалга, хийцийн сонголтыг харуулав. Техникийн үзүүлэлтийг төслийн нөхцөлд тохируулан сонгоно."
             inverse
           />
           <div className="grid-3">
@@ -164,12 +160,12 @@ export default function ResourcesPage() {
       </section>
 
       <section className="section">
-        <div className="shell prose">
+        <div className="shell faq-section__inner">
           <SectionHeading
             eyebrow="Түгээмэл асуулт"
             title="Төлөвлөлтийн өмнө мэдэх зүйлс"
           />
-          <div className="resource-list">
+          <div className="faq-list">
             {faq.map((item) => (
               <details key={item.question}>
                 <summary>{item.question}</summary>
@@ -180,11 +176,11 @@ export default function ResourcesPage() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section section--contact">
         <div className="shell">
           <ContactPanel
             title="Зураг бүрэн болоогүй байсан ч холбогдож болно"
-            description="Бэлэн байгаа зураг, мэдээллээ и-мэйлээр илгээх эсвэл талбайн уулзалт товлоорой. Вэбсайтад маягт, файл илгээх хэсэг байхгүй."
+            description="Бэлэн байгаа зураг, мэдээллээ и-мэйлээр илгээх эсвэл талбайн уулзалт товлоорой."
           />
         </div>
       </section>

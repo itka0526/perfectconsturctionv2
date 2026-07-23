@@ -1,4 +1,4 @@
-import { Breadcrumbs, SectionHeading } from "@/components";
+import { SectionHeading } from "@/components";
 import { createPageMetadata } from "@/lib/metadata";
 import { breadcrumbsJsonLd } from "@/lib/structured-data";
 
@@ -22,9 +22,6 @@ export default function PrivacyPage() {
       />
       <section className="page-hero section">
         <div className="shell">
-          <Breadcrumbs
-            items={[{ label: "Нүүр", href: "/" }, { label: "Нууцлал" }]}
-          />
           <div className="page-hero__grid">
             <div>
               <p className="eyebrow">Мэдээллийн бодлого</p>

@@ -6,7 +6,6 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { siteSettings, type ContactChannelKind } from "@/content";
-import { PlaceholderBadge } from "./placeholder-badge";
 import { TrackedLink } from "./tracked-link";
 
 interface ContactPanelProps {
@@ -34,23 +33,12 @@ export function ContactPanel({
   const otherContacts = siteSettings.contacts.filter(
     (contact) => contact.kind !== "phone",
   );
-  const containsPlaceholder = siteSettings.contacts.some(
-    (contact) => contact.verificationStatus === "placeholder",
-  );
-
   return (
     <section className={`contact-panel ${className}`.trim()}>
       <div className="contact-panel__intro">
         <p className="eyebrow">Шууд холбоо</p>
         <h2>{title}</h2>
         <p>{description}</p>
-        {containsPlaceholder && (
-          <p className="contact-panel__notice">
-            <PlaceholderBadge label="Preview" />
-            Түр тэмдэглэгээтэй холбоо барих мэдээллийг нийтлэхээс өмнө
-            баталгаажуулна.
-          </p>
-        )}
       </div>
       <ul className="contact-panel__channels">
         {phones.length > 0 && (

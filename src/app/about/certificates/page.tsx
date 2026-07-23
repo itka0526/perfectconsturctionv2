@@ -1,7 +1,5 @@
 import {
-  Breadcrumbs,
   ContactPanel,
-  PlaceholderBadge,
   ProjectImage,
   SectionHeading,
 } from "@/components";
@@ -14,15 +12,13 @@ import { JsonLd } from "../../_route-helpers";
 export const metadata = createPageMetadata({
   title: "Үйлдвэрлэгчийн эрхийн баримт, гэрчилгээ",
   description:
-    "Төгс Бүтээн Босголтын нийтлэх зөвшөөрөлтэй үйлдвэрлэгчийн эрхийн баримт, гэрчилгээний сан.",
+    "Төгс Бүтээн Босголтын үйлдвэрлэгчийн эрхийн баримт, гэрчилгээний сан.",
   path: "/about/certificates",
 });
 
 const orderedCertificates = certificates
-  .filter((certificate) => !certificate.draft)
-  .sort(
-    (left, right) =>
-      Number(right.publicationAuthorized) - Number(left.publicationAuthorized),
+  .filter(
+    (certificate) => !certificate.draft && certificate.publicationAuthorized,
   );
 
 export default function CertificatesPage() {
@@ -37,21 +33,14 @@ export default function CertificatesPage() {
       />
       <section className="page-hero section">
         <div className="shell">
-          <Breadcrumbs
-            items={[
-              { label: "Нүүр", href: "/" },
-              { label: "Компанийн тухай", href: "/about" },
-              { label: "Баримт, гэрчилгээ" },
-            ]}
-          />
           <div className="page-hero__grid">
             <div>
               <p className="eyebrow">Албан ёсны баримт</p>
               <h1 className="display">Үйлдвэрлэгчийн эрхийн баримт, гэрчилгээ</h1>
             </div>
             <p className="lede">
-              Баримтын гаргагч, төрөл, хүчинтэй хугацаа, нийтлэх зөвшөөрлийг
-              шалгасны дараа үзэх зураг болон эх PDF файлыг байршуулна.
+              Үйлдвэрлэгчийн эрхийн баримтын гаргагч, төрөл, хүчинтэй хугацаа,
+              үзэх зураг болон эх PDF файлыг нэг дор танилцуулна.
             </p>
           </div>
         </div>
@@ -61,29 +50,24 @@ export default function CertificatesPage() {
         <div className="shell">
           <SectionHeading
             eyebrow="Үйлдвэрлэгчээр"
-            title="Нийтлэх боломжтой баримтууд"
-            description="Зөвшөөрөлгүй баримтын зураг, PDF-ийг урьдчилан нийтлэхгүй."
+            title="Эрхийн баримт, гэрчилгээ"
+            description="Үйлдвэрлэгчтэй хамтран ажиллах эрх, баримт бичгийг эндээс үзнэ үү."
           />
           <div className="certificate-grid">
             {orderedCertificates.map((certificate) => (
               <article className="card" id={certificate.slug} key={certificate.slug}>
-                {certificate.publicationAuthorized ? (
-                  <div className="card__media">
-                    <ProjectImage
-                      asset={certificate.previewAsset}
-                      sizes="(max-width: 680px) 100vw, (max-width: 1100px) 50vw, 33vw"
-                    />
-                  </div>
-                ) : null}
+                <div className="card__media">
+                  <ProjectImage
+                    asset={certificate.previewAsset}
+                    sizes="(max-width: 680px) 100vw, (max-width: 1100px) 50vw, 33vw"
+                  />
+                </div>
                 <div className="card__body">
                   <p className="card__meta">{certificate.documentType.mn}</p>
                   <h2>{certificate.title.mn}</h2>
                   <p>{certificate.summary.mn}</p>
                   <p>Гаргагч: {certificate.issuer.mn}</p>
-                  {!certificate.publicationAuthorized ? (
-                    <PlaceholderBadge label="Нийтлэх зөвшөөрөл хүлээгдэж байна" />
-                  ) : null}
-                  {certificate.publicationAuthorized && certificate.downloadPath ? (
+                  {certificate.downloadPath ? (
                     <a
                       className="link-arrow"
                       download
@@ -99,19 +83,7 @@ export default function CertificatesPage() {
         </div>
       </section>
 
-      <section className="section section--soft">
-        <div className="shell prose">
-          <h2>Баримт нийтлэх шалгуур</h2>
-          <ul className="resource-list">
-            <li>Одоогийн хүчинтэй статус, хугацааг баталгаажуулсан байх.</li>
-            <li>Үйлдвэрлэгчээс вэбсайтад нийтлэх зөвшөөрөл авсан байх.</li>
-            <li>Компанийн эрх, харилцааг хэтрүүлэлгүй зөв томьёолсон байх.</li>
-            <li>Уншихад тод зураг болон эх файлыг тусад нь бэлтгэсэн байх.</li>
-          </ul>
-        </div>
-      </section>
-
-      <section className="section">
+      <section className="section section--contact">
         <div className="shell">
           <ContactPanel
             title="Төсөлд тохирох үйлдвэрлэгчийн талаар асуугаарай"

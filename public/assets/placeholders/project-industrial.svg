@@ -1,5 +1,4 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
-  <title id="title">Industrial project preview</title><desc id="desc">Not a real project photograph. Replace before production.</desc>
+  <title id="title">Industrial building illustration</title><desc id="desc">Abstract industrial building with a cargo elevator shaft.</desc>
   <rect width="1600" height="1000" fill="#dde0e4"/><path d="M100 880V420l360-190v190l360-190v190l360-190v190h320v460z" fill="#eef0f2"/><rect x="930" y="350" width="290" height="530" fill="#17264d"/><path d="M1075 410v410" stroke="#58a87d" stroke-width="8"/><g fill="#a9b1bc"><rect x="230" y="530" width="210" height="170"/><rect x="550" y="530" width="210" height="170"/><rect x="1280" y="530" width="150" height="170"/></g>
-  <text x="65" y="80" fill="#101b3c" font-family="Arial,sans-serif" font-size="34" font-weight="700">PREVIEW INDUSTRIAL CASE STUDY</text><text x="65" y="125" fill="#59657a" font-family="Arial,sans-serif" font-size="24">NOT A REAL PROJECT — REPLACE BEFORE PRODUCTION</text>
 </svg>

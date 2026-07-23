@@ -1,6 +1,5 @@
 import {
   BrandCard,
-  Breadcrumbs,
   ButtonLink,
   ContactPanel,
   SectionHeading,
@@ -29,9 +28,6 @@ export default function BrandsPage() {
       />
       <section className="page-hero section">
         <div className="shell">
-          <Breadcrumbs
-            items={[{ label: "Нүүр", href: "/" }, { label: "Үйлдвэрлэгчид" }]}
-          />
           <div className="page-hero__grid">
             <div>
               <p className="eyebrow">Үйлдвэрлэгчид</p>
@@ -51,7 +47,7 @@ export default function BrandsPage() {
           <SectionHeading
             eyebrow="Үйлдвэрлэгчийн сонголт"
             title="Төсөлдөө тохирох үйлдвэрлэгч"
-            description="Үйлдвэрлэгчийн албан ёсны эрх, хүчинтэй хугацаа, нийтлэх зөвшөөрлийг баримтаар танилцуулна."
+            description="Үйлдвэрлэгчийн албан ёсны эрх, хүчинтэй хугацаа, бүтээгдэхүүний чиглэлийг баримттай нь танилцуулна."
           />
           <div className="brand-rail">
             {brands.filter((brand) => !brand.draft).map((brand) => (
@@ -90,9 +86,8 @@ export default function BrandsPage() {
           />
           <div className="prose">
             <p>
-              Үйлдвэрлэгчийн танилцуулгын хамт нийтлэх зөвшөөрөлтэй эрхийн
-              баримт, гэрчилгээ, хүчинтэй хугацааг баримт, гэрчилгээний хэсгээс
-              үзэж болно.
+              Үйлдвэрлэгчийн танилцуулга, эрхийн баримт, гэрчилгээ, хүчинтэй
+              хугацааг баримт, гэрчилгээний хэсгээс үзэж болно.
             </p>
             <ButtonLink href="/about/certificates" variant="outline">
               Баримт, гэрчилгээ үзэх
@@ -101,7 +96,7 @@ export default function BrandsPage() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section section--contact">
         <div className="shell">
           <ContactPanel
             title="Төсөлдөө тохирох үйлдвэрлэгчийг сонгоё"

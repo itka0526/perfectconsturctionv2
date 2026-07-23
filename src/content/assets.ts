@@ -42,21 +42,49 @@ export const assets = {
     ),
   },
   homepage: {
-    elevatorDescentVideo: {
-      src: "/assets/homepage/elevator-descent.webm",
-      verificationStatus: "verified",
-    },
-    hero: placeholder(
-      "/assets/placeholders/hero.svg",
-      "Монголд хэрэгжүүлсэн лифтний төслийн үндсэн зургийн түр байрлал",
-      1920,
-      1280,
+    elevatorShaft: verified(
+      "/assets/homepage/elevator-shaft.webp",
+      "Орчин үеийн лифтний босоо амны дотор тал",
+      864,
+      1821,
+    ),
+    elevatorCar: verified(
+      "/assets/homepage/elevator-car.webp",
+      "Хүрэл өнгийн дотоод засалтай орчин үеийн зорчигчийн лифтний бүхээг",
+      1538,
+      1022,
+    ),
+  },
+  socials: {
+    facebook: verified(
+      "/assets/socials/facebook.svg",
+      "Facebook лого",
+      800,
+      800,
+    ),
+    gmail: verified(
+      "/assets/socials/gmail.svg",
+      "Gmail лого",
+      800,
+      800,
+    ),
+    messenger: verified(
+      "/assets/socials/messenger.svg",
+      "Messenger лого",
+      512,
+      512,
+    ),
+    viber: verified(
+      "/assets/socials/viber.svg",
+      "Viber лого",
+      800,
+      800,
     ),
   },
   manufacturers: {
     seohyun: placeholder(
       "/assets/placeholders/brand.svg",
-      "SEOHYUN үйлдвэрлэгчийн баталгаажуулах логоны түр байрлал",
+      "SEOHYUN үйлдвэрлэгчийн тэмдэг",
       640,
       320,
     ),
@@ -116,9 +144,11 @@ export const assets = {
       1600,
       1138,
     ),
-    dumbwaiter: placeholder(
-      "/assets/placeholders/product.svg",
-      "Үйлчилгээний бага оврын лифтний баталгаажуулах зургийн түр байрлал",
+    dumbwaiter: verified(
+      "/assets/products/dumbwaiter/dumbwaiter.png",
+      "Шилэн хүрээ дотор суурилуулсан зэвэрдэггүй ган бүхээгтэй жижиг ачааны лифт",
+      1000,
+      1000,
     ),
     customization: verified(
       "/assets/catalogs/fuji-precision-decoration/fuji-precision-customized-cabin-series.webp",
@@ -130,21 +160,21 @@ export const assets = {
   projects: {
     residence: placeholder(
       "/assets/placeholders/project-residence.svg",
-      "Улаанбаатар хотын орон сууцны төслийн зургийн түр байрлал",
+      "Улаанбаатар хотын орон сууцны лифтний төслийн дүрслэл",
     ),
     commercial: placeholder(
       "/assets/placeholders/project-commercial.svg",
-      "Улаанбаатар хотын үйлчилгээний төвийн төслийн зургийн түр байрлал",
+      "Улаанбаатар хотын үйлчилгээний төвийн лифтний төслийн дүрслэл",
     ),
     industrial: placeholder(
       "/assets/placeholders/project-industrial.svg",
-      "Үйлдвэрийн барилгын төслийн зургийн түр байрлал",
+      "Үйлдвэрийн барилгын ачааны лифтний төслийн дүрслэл",
     ),
   },
   certificates: {
     generic: placeholder(
       "/assets/placeholders/certificate.svg",
-      "Нийтлэх зөвшөөрөл хүлээгдэж буй гэрчилгээний түр байрлал",
+      "Үйлдвэрлэгчийн эрхийн баримтын дүрслэл",
       900,
       1273,
     ),
@@ -180,7 +210,8 @@ export const assets = {
 export const allAssetRefs: AssetRef[] = [
   assets.company.logo,
   assets.company.office,
-  assets.homepage.hero,
+  ...Object.values(assets.homepage),
+  ...Object.values(assets.socials),
   ...Object.values(assets.manufacturers),
   ...Object.values(assets.products),
   ...Object.values(assets.projects),

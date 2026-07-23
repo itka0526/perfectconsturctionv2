@@ -1,5 +1,4 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="640" height="320" viewBox="0 0 640 320" role="img" aria-labelledby="title desc">
-  <title id="title">Manufacturer logo preview</title><desc id="desc">Not an official logo. Replace before production.</desc>
+  <title id="title">Manufacturer mark illustration</title><desc id="desc">Abstract manufacturer mark.</desc>
   <rect width="640" height="320" fill="#f2f1ec"/><rect x="24" y="24" width="592" height="272" fill="none" stroke="#aeb5c1" stroke-width="2" stroke-dasharray="8 8"/><path d="M278 88h84v110h-84zM298 108h44v70h-44z" fill="#17264d" fill-rule="evenodd"/><path d="m320 220-18 22h36z" fill="#58a87d"/>
-  <text x="320" y="272" text-anchor="middle" fill="#101b3c" font-family="Arial,sans-serif" font-size="16" font-weight="700">UNVERIFIED MANUFACTURER LOGO</text><text x="320" y="292" text-anchor="middle" fill="#667188" font-family="Arial,sans-serif" font-size="11">REPLACE BEFORE PRODUCTION</text>
 </svg>

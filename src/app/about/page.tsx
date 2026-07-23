@@ -1,8 +1,6 @@
 import {
-  Breadcrumbs,
   ButtonLink,
   ContactPanel,
-  PlaceholderBadge,
   ProjectImage,
   SectionHeading,
 } from "@/components";
@@ -36,12 +34,6 @@ export default function AboutPage() {
       />
       <section className="page-hero section">
         <div className="shell">
-          <Breadcrumbs
-            items={[
-              { label: "Нүүр", href: "/" },
-              { label: "Компанийн тухай" },
-            ]}
-          />
           <div className="page-hero__grid">
             <div>
               <p className="eyebrow">Төгс Бүтээн Босголт</p>
@@ -51,7 +43,6 @@ export default function AboutPage() {
                 хэмжээ, ашиглалтын шаардлагад нийцүүлэн сонгож, захиалга,
                 тээвэр, угсралтын ажлыг зохион байгуулна.
               </p>
-              <PlaceholderBadge label="Компанийн түүх, тоон үзүүлэлтийг баталгаажуулна" />
             </div>
             <ProjectImage
               asset={assets.company.office}
@@ -76,7 +67,7 @@ export default function AboutPage() {
               угсралтын нөхцөлийг хамтад нь тооцох шаардлагатай.
             </p>
             <p>
-              Төгс Бүтээн Босголт нь баталгаажсан үйлдвэрлэгчийн бүтээгдэхүүнийг
+              Төгс Бүтээн Босголт нь хамтран ажилладаг үйлдвэрлэгчдийн бүтээгдэхүүнийг
               танилцуулж, талбайн хэмжилт, техникийн сонголт, үйлдвэрийн захиалга,
               тээвэр, угсралтын ажлыг хариуцан зохион байгуулна.
             </p>
@@ -98,7 +89,7 @@ export default function AboutPage() {
               items={[
                 "Шахтын хэмжээ, худгийн гүн, цахилгаан хангамж, талбайн бодит хэмжилт",
                 "Даац, хурд, зогсолтын тоо, хаалга, кабин, удирдлагын сонголт",
-                "Техникийн үзүүлэлт, үйлдвэрийн захиалгыг баталгаажуулах",
+                "Техникийн үзүүлэлт, үйлдвэрийн захиалгыг тохиролцох",
                 "Тээвэр, талбайн бэлэн байдал, угсралтын ажлыг төлөвлөх",
               ]}
             />
@@ -107,22 +98,20 @@ export default function AboutPage() {
       </section>
 
       <section className="section section--soft">
-        <div className="shell detail-grid">
-          <div>
+        <div className="shell detail-grid about-history">
+          <div className="about-history__summary">
             <p className="eyebrow">Компанийн түүх</p>
             <h2 className="display">Компанийн түүх, гүйцэтгэсэн ажил</h2>
             <p className="lede">
-              Үүсгэн байгуулагдсан он, үйл ажиллагааны үе шат, суурилуулсан
-              лифтний тоог эх баримт болон шинэчилсэн огноотой нийтэлнэ.
+              Компанийн үйл ажиллагааны чиглэл, хэрэгжүүлсэн ажил, хамтын
+              ажиллагааны туршлагыг нэг дор танилцуулна.
             </p>
-            <PlaceholderBadge />
           </div>
-          <div>
+          <div className="about-history__documents">
             <p className="eyebrow">Албан ёсны баримт</p>
             <h2>Эрхийн баримт ба гэрчилгээ</h2>
             <p>
-              Нийтлэх зөвшөөрөлтэй эрхийн баримт, гэрчилгээг нэг дор
-              танилцуулна.
+              Үйлдвэрлэгчийн эрхийн баримт, гэрчилгээг нэг дор танилцуулна.
             </p>
             <ButtonLink href="/about/certificates" variant="outline">
               Баримт, гэрчилгээ
@@ -131,7 +120,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section section--contact">
         <div className="shell">
           <ContactPanel
             title="Шинэ төслийнхөө талаар уулзаж ярилцъя"

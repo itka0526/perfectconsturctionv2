@@ -1,10 +1,8 @@
 import { notFound } from "next/navigation";
 
 import {
-  Breadcrumbs,
   ButtonLink,
   ContactPanel,
-  PlaceholderBadge,
   ProjectImage,
   SectionHeading,
 } from "@/components";
@@ -49,19 +47,11 @@ export default function CustomizationPage() {
       />
       <section className="page-hero section">
         <div className="shell">
-          <Breadcrumbs
-            items={[
-              { label: "Нүүр", href: "/" },
-              { label: "Бүтээгдэхүүн", href: "/products" },
-              { label: "Кабин, хаалга, удирдлага" },
-            ]}
-          />
           <div className="page-hero__grid">
             <div>
               <p className="eyebrow">Дотоод засалтай уялдуулна</p>
               <h1 className="display">{customization.title.mn}</h1>
               <p className="lede">{customization.summary.mn}</p>
-              <PlaceholderBadge />
               <ButtonLink href="/contact">Сонголтоо ярилцах</ButtonLink>
             </div>
             <ProjectImage
@@ -111,13 +101,13 @@ export default function CustomizationPage() {
             <p>
               Дэлгэц дээрх өнгө, материалын дүрслэл бодит дээжээс зөрж болдог.
               Иймээс эцсийн сонголтыг үйлдвэрлэгчийн каталог эсвэл бодит дээжээр
-              баталгаажуулна.
+              хийнэ.
             </p>
           </div>
         </div>
       </section>
 
-      <section className="section">
+      <section className="section section--contact">
         <div className="shell">
           <ContactPanel
             title="Кабин, хаалганы сонголтоо ярилцъя"

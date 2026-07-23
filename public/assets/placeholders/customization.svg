@@ -1,5 +1,4 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
-  <title id="title">Customization preview</title><desc id="desc">Abstract material selection board. Replace before production.</desc>
+  <title id="title">Customization illustration</title><desc id="desc">Abstract material selection board.</desc>
   <rect width="1600" height="1000" fill="#e8e9eb"/><g><rect x="170" y="190" width="330" height="620" fill="#17264d"/><rect x="500" y="190" width="300" height="620" fill="#c7b99d"/><rect x="800" y="190" width="300" height="620" fill="#aab0b9"/><rect x="1100" y="190" width="330" height="620" fill="#59657a"/></g><g fill="none" stroke="#58a87d" stroke-width="7"><rect x="210" y="235" width="250" height="530"/><circle cx="950" cy="500" r="78"/></g>
-  <text x="70" y="90" fill="#101b3c" font-family="Arial,sans-serif" font-size="34" font-weight="700">PREVIEW FINISHES &amp; CONTROLS</text><text x="70" y="135" fill="#59657a" font-family="Arial,sans-serif" font-size="24">REPLACE BEFORE PRODUCTION</text>
 </svg>

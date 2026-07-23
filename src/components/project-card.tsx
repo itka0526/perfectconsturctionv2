@@ -1,6 +1,5 @@
 import type { Project } from "@/content";
 import { ButtonLink } from "./button-link";
-import { PlaceholderBadge } from "./placeholder-badge";
 import { ProjectImage } from "./project-image";
 
 interface ProjectCardProps {
@@ -30,9 +29,6 @@ export function ProjectCard({ project, featured = false }: ProjectCardProps) {
         <div className="card__meta">
           <span>{project.buildingType.mn}</span>
           <span>{project.location.mn}</span>
-          {project.verificationStatus === "placeholder" && (
-            <PlaceholderBadge label="Түр агуулга" />
-          )}
         </div>
         <h3>{project.title.mn}</h3>
         <p>{project.summary.mn}</p>

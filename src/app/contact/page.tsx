@@ -1,10 +1,7 @@
-import {
-  Breadcrumbs,
-  PlaceholderBadge,
-  SectionHeading,
-  TrackedLink,
-} from "@/components";
-import { siteSettings } from "@/content";
+import Image from "next/image";
+
+import { SectionHeading, TrackedLink } from "@/components";
+import { assets, siteSettings } from "@/content";
 import { createPageMetadata } from "@/lib/metadata";
 import {
   breadcrumbsJsonLd,
@@ -28,6 +25,13 @@ const channelDescriptions = {
   office: "Урьдчилан цаг товлож, биечлэн уулзана.",
 };
 
+const heroSocialIcons = [
+  { asset: assets.socials.facebook, name: "facebook" },
+  { asset: assets.socials.gmail, name: "gmail" },
+  { asset: assets.socials.messenger, name: "messenger" },
+  { asset: assets.socials.viber, name: "viber" },
+] as const;
+
 export default function ContactPage() {
   return (
     <main>
@@ -40,23 +44,34 @@ export default function ContactPage() {
           ]),
         ]}
       />
-      <section className="page-hero section">
+      <section className="page-hero page-hero--contact section">
         <div className="shell">
-          <Breadcrumbs
-            items={[
-              { label: "Нүүр", href: "/" },
-              { label: "Холбоо барих" },
-            ]}
-          />
           <div className="page-hero__grid">
             <div>
               <p className="eyebrow">Холбоо барих</p>
               <h1 className="display">Шинэ төслийнхөө талаар шууд ярилцъя</h1>
             </div>
-            <p className="lede">
-              Маягт бөглөх шаардлагагүй. Утсаар ярих, и-мэйл бичих,
-              Facebook-ээр холбогдох эсвэл уулзалтын цаг товлож болно.
-            </p>
+            <div className="contact-hero-socials">
+              <p className="lede contact-hero-socials__copy">
+                Утас, и-мэйл эсвэл Facebook-ээр холбогдож, уулзалтын цагаа
+                товлоорой.
+              </p>
+              {heroSocialIcons.map(({ asset, name }) => (
+                <span
+                  aria-hidden="true"
+                  className={`contact-hero-socials__icon contact-hero-socials__icon--${name}`}
+                  key={name}
+                >
+                  <Image
+                    alt=""
+                    height={asset.height}
+                    loading="eager"
+                    src={asset.src}
+                    width={asset.width}
+                  />
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -75,9 +90,6 @@ export default function ContactPage() {
                 <div className="card__body">
                   <h2>{channel.value}</h2>
                   <p>{channelDescriptions[channel.kind]}</p>
-                  {channel.verificationStatus === "placeholder" ? (
-                    <PlaceholderBadge />
-                  ) : null}
                   <TrackedLink
                     className="link-arrow"
                     eventContext={`contact_${channel.kind}`}
@@ -96,13 +108,10 @@ export default function ContactPage() {
       </section>
 
       <section className="section section--ink">
-        <div className="shell detail-grid">
+        <div className="shell detail-grid detail-grid--contact-office">
           <div>
             <p className="eyebrow">Оффис ба уулзалт</p>
-            <h2 className="display">{siteSettings.address.mn}</h2>
-            {siteSettings.addressVerificationStatus === "placeholder" ? (
-              <PlaceholderBadge label="Хаягийг баталгаажуулна" />
-            ) : null}
+            <h2 className="contact-address">{siteSettings.address.mn}</h2>
           </div>
           <div className="prose">
             <h2>Холбогдсоны дараа</h2>
@@ -115,17 +124,6 @@ export default function ContactPage() {
               </li>
             </ol>
           </div>
-        </div>
-      </section>
-
-      <section className="section section--soft">
-        <div className="shell prose">
-          <h2>Дуудлагад хариу өгөх</h2>
-          <p>
-            Дуудлагыг шууд авахыг зорьдог. Хэрэв дуудлага авч чадаагүй бол
-            эргэн холбогдож, шаардлагатай тохиолдолд талбайн уулзалтын цаг
-            товлоно.
-          </p>
         </div>
       </section>
     </main>

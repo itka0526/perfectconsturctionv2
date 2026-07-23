@@ -71,8 +71,8 @@ the source contains a document number, signature, and corporate seal.
 Only the selected catalogue excerpts and optimized authorization preview are
 registered as public content. Catalogue imagery is identified as manufacturer
 material rather than completed Mongolian project photography.
-Cargo, dumbwaiter, SEOHYUN, FUJI Precision authorization, homepage hero, and
-project-photo placeholders remain until matching approved evidence is supplied.
+Cargo, SEOHYUN, FUJI Precision authorization, and project-photo placeholders
+remain until matching approved evidence is supplied.
 Contact-channel testing and ownership, logo-use rules, the exact map destination,
 final project facts, founding year, installed count, and page-by-page metadata
 approval also remain release blockers.

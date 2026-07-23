@@ -278,7 +278,8 @@ export function validateContent(
     const standalonePublicAssets = [
       ["site.logo", assets.company.logo],
       ["site.office", assets.company.office],
-      ["homepage.hero", assets.homepage.hero],
+      ["homepage.elevatorShaft", assets.homepage.elevatorShaft],
+      ["homepage.elevatorCar", assets.homepage.elevatorCar],
     ] as const;
 
     standalonePublicAssets.forEach(([path, asset]) => {

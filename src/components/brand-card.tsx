@@ -1,6 +1,5 @@
 import type { Brand } from "@/content";
 import { ButtonLink } from "./button-link";
-import { PlaceholderBadge } from "./placeholder-badge";
 import { ProjectImage } from "./project-image";
 
 interface BrandCardProps {
@@ -24,9 +23,6 @@ export function BrandCard({ brand }: BrandCardProps) {
       <div className="card__body">
         <div className="card__meta">
           <span>{brand.origin.mn}</span>
-          {brand.verificationStatus === "placeholder" && (
-            <PlaceholderBadge label="Статус баталгаажуулна" />
-          )}
         </div>
         <h3>{brand.title.mn}</h3>
         <p>{brand.positioning.mn}</p>
