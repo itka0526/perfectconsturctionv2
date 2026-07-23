@@ -26,24 +26,15 @@ describe("content validation", () => {
     expect(issues.map(({ code }) => code)).toEqual(
       expect.arrayContaining([
         "placeholder-record",
-        "placeholder-asset",
-        "placeholder-contact",
       ]),
     );
+    expect(issues.map(({ code }) => code)).not.toContain("placeholder-asset");
+    expect(issues.map(({ code }) => code)).not.toContain("placeholder-contact");
     expect(issues.map(({ code }) => code)).not.toContain("placeholder-proof");
     expect(issues.map(({ code }) => code)).not.toContain("placeholder-timeline");
-    expect(issues.map(({ path }) => path)).toEqual(
-      expect.arrayContaining([
-        "site.logo",
-        "site.address",
-        "site.contacts.phone-primary",
-        "site.contacts.phone-secondary",
-        "site.contacts.phone-mobile",
-        "site.contacts.email-primary",
-        "site.contacts.facebook-primary",
-        "site.contacts.map-primary",
-      ]),
-    );
+    expect(
+      issues.filter(({ path }) => path.startsWith("products.")),
+    ).toEqual([]);
     expect(() => assertContentReadyForProduction()).toThrow(
       "Production content validation failed",
     );

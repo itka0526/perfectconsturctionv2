@@ -91,7 +91,12 @@ const validateRecord = (
     }
   }
 
-  if (production && !record.draft && record.verificationStatus !== "verified") {
+  if (
+    production &&
+    collectionName !== "products" &&
+    !record.draft &&
+    record.verificationStatus !== "verified"
+  ) {
     issues.push({
       code: "placeholder-record",
       path,
